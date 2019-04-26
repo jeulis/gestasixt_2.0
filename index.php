@@ -19,7 +19,7 @@ if (isset($_GET['action'])) {
 
 }
 else {
-    echo ('error');
+    \Controllers\ControllerManage::home();
 }
 
 //if (isset($_GET['controller'])) {

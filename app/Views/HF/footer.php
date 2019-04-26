@@ -43,14 +43,14 @@
         </div>
 
         <!-- Bootstrap core JavaScript-->
-        <script src="../../../../aoui/vendor/jquery/jquery.min.js"></script>
-        <script src="../../../../aoui/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="../../../../gestasixt_2.0/vendor/jquery/jquery.min.js"></script>
+        <script src="../../../../gestasixt_2.0/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
         <!-- Core plugin JavaScript-->
-        <script src="../../../../aoui/vendor/jquery-easing/jquery.easing.min.js"></script>
+        <script src="../../../../gestasixt_2.0/vendor/jquery-easing/jquery.easing.min.js"></script>
 
         <!-- Custom scripts for all pages-->
-        <script src="../../../../aoui/js/sb-admin-2.min.js"></script>
+        <script src="../../../../gestasixt_2.0/js/sb-admin-2.min.js"></script>
 
     </body>
 

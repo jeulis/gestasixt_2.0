@@ -23,36 +23,36 @@ class ControllerManage
         $nbRents = \Models\Home::getNbRents();
         $title = 'Home';
 
-        include DOC_ROOT_PATH . '../html/aoui/app/Views/HF/header.php';
-        include DOC_ROOT_PATH . '../html/aoui/app/Views/home.php';
-        include DOC_ROOT_PATH . '../html/aoui/app/Views/HF/footer.php';
+        include DOC_ROOT_PATH . '../html/gestasixt_2.0/app/Views/HF/header.php';
+        include DOC_ROOT_PATH . '../html/gestasixt_2.0/app/Views/home.php';
+        include DOC_ROOT_PATH . '../html/gestasixt_2.0/app/Views/HF/footer.php';
     }
     public function users()
     {
         $nbUsers = \Models\Home::getNbUsers();
         $title = 'Users';
 
-        include DOC_ROOT_PATH . '../html/aoui/app/Views/HF/header.php';
-        include DOC_ROOT_PATH . '../html/aoui/app/Views/users.php';
-        include DOC_ROOT_PATH . '../html/aoui/app/Views/HF/footer.php';
+        include DOC_ROOT_PATH . '../html/gestasixt_2.0/app/Views/HF/header.php';
+        include DOC_ROOT_PATH . '../html/gestasixt_2.0/app/Views/users.php';
+        include DOC_ROOT_PATH . '../html/gestasixt_2.0/app/Views/HF/footer.php';
     }
     public function vehicles()
     {
         $nbVehicles = \Models\Home::getNbVehicles();
         $title = 'Vehicles';
 
-        include DOC_ROOT_PATH . '../html/aoui/app/Views/HF/header.php';
-        include DOC_ROOT_PATH . '../html/aoui/app/Views/vehicles.php';
-        include DOC_ROOT_PATH . '../html/aoui/app/Views/HF/footer.php';
+        include DOC_ROOT_PATH . '../html/gestasixt_2.0/app/Views/HF/header.php';
+        include DOC_ROOT_PATH . '../html/gestasixt_2.0/app/Views/vehicles.php';
+        include DOC_ROOT_PATH . '../html/gestasixt_2.0/app/Views/HF/footer.php';
     }
     public function rents()
     {
         $nbRents = \Models\Home::getNbRents();
         $title = 'Rents';
 
-        include DOC_ROOT_PATH . '../html/aoui/app/Views/HF/header.php';
-        include DOC_ROOT_PATH . '../html/aoui/app/Views/rents.php';
-        include DOC_ROOT_PATH . '../html/aoui/app/Views/HF/footer.php';
+        include DOC_ROOT_PATH . '../html/gestasixt_2.0/app/Views/HF/header.php';
+        include DOC_ROOT_PATH . '../html/gestasixt_2.0/app/Views/rents.php';
+        include DOC_ROOT_PATH . '../html/gestasixt_2.0/app/Views/HF/footer.php';
     }
 
 

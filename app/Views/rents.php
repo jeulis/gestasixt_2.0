@@ -17,7 +17,7 @@
 
         <!-- Nav Item - Dashboard -->
         <li class="nav-item ">
-            <a class="nav-link" href="http://localhost/aoui/?action=home">
+            <a class="nav-link" href="http://localhost/gestasixt_2.0/?action=home">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>Dashboard</span></a>
         </li>
@@ -32,21 +32,21 @@
 
         <!-- Nav Item - users -->
         <li class="nav-item">
-            <a class="nav-link" href="http://localhost/aoui/?action=users">
+            <a class="nav-link" href="http://localhost/gestasixt_2.0/?action=users">
                 <i class="fas fa-fw fa-table"></i>
                 <span>Users</span></a>
         </li>
 
         <!-- Nav Item - vehicles -->
         <li class="nav-item">
-            <a class="nav-link" href="http://localhost/aoui/?action=vehicles">
+            <a class="nav-link" href="http://localhost/gestasixt_2.0/?action=vehicles">
                 <i class="fas fa-fw fa-table"></i>
                 <span>Vehicles</span></a>
         </li>
 
         <!-- Nav Item - rents -->
         <li class="nav-item active">
-            <a class="nav-link" href="http://localhost/aoui/?action=rents">
+            <a class="nav-link" href="http://localhost/gestasixt_2.0/?action=rents">
                 <i class="fas fa-fw fa-table"></i>
                 <span>Rents</span></a>
         </li>
@@ -188,40 +188,42 @@
 
 
                     <?php
-                    $json = file_get_contents('http://localhost/gestapi/vehicle/count');
+                    $json = file_get_contents('http://localhost/gestapi/rent/count');
 
-                    $dataVehicle = json_decode($json, true);
+                    $dataRent = json_decode($json, true);
 
-                    $resultatVehicles = $dataVehicle['vehicle'][0];
+                    $resultatRents = $dataRent['rent'][0];
 
-                    $nbVehicles = $resultatVehicles['nbVehicles'];
-
-
-                    for ($i = 0; $i < $nbVehicles; $i++) {
+                    $nbRents = $resultatRents['nbRents'];
 
 
+                    for ($i = 0; $i < $nbRents; $i++) {
 
-                        $json = file_get_contents('http://localhost/gestapi/vehicle/get/all');
-                        $dataVehicleAll = json_decode($json, true);
-                        $resultatVehicleAll = $dataVehicleAll['vehicle'][$i];
 
-                        $VehicleModel = $resultatVehicleAll['model'];
-                        $VehicleNbPlaces = $resultatVehicleAll['nbPlaces'];
-                        $VehicleKilometers = $resultatVehicleAll['kilometers'];
-                        $VehicleRegistration = $resultatVehicleAll['registration'];
-                        $VehicleCapacity = $resultatVehicleAll['capacity'];
-                        $VehicleColor = $resultatVehicleAll['color'];
-                        $VehicleCategory = $resultatVehicleAll['category'];
-                        $VehicleBrand = $resultatVehicleAll['brand'];
+
+                        $json = file_get_contents('http://localhost/gestapi/rent/get/all');
+                        $dataRentAll = json_decode($json, true);
+                        $resultatRentAll = $dataRentAll['rent'][$i];
+
+                        $RentId = $resultatRentAll['id'];
+                        $RentIdVehicle = $resultatRentAll['idVehicle'];
+                        $RentIdUser = $resultatRentAll['idUser'];
+                        $RentIdStartAgency = $resultatRentAll['idStartAgency'];
+                        $RentIdEndAgency = $resultatRentAll['idEndAgency'];
+                        $RentDateStart = $resultatRentAll['dateStart'];
+                        $RentDateEnd = $resultatRentAll['dateEnd'];
+                        $RentCost = $resultatRentAll['cost'];
+                        $RentKilometers = $resultatRentAll['kilometers'];
                         echo '<tr>
-                                        <td>' . $VehicleModel . '</td> 
-                                        <td>' . $VehicleNbPlaces . '</td> 
-                                        <td>' . $VehicleKilometers . '</td> 
-                                        <td>' . $VehicleRegistration . '</td> 
-                                        <td>' . $VehicleCapacity . '</td> 
-                                        <td>' . $VehicleColor . '</td> 
-                                        <td>' . $VehicleCategory . '</td> 
-                                        <td>' . $VehicleBrand . '</td> 
+                                        <td>' . $RentId . '</td> 
+                                        <td>' . $RentIdVehicle . '</td> 
+                                        <td>' . $RentIdUser . '</td> 
+                                        <td>' . $RentIdStartAgency . '</td> 
+                                        <td>' . $RentIdEndAgency . '</td> 
+                                        <td>' . $RentDateStart . '</td> 
+                                        <td>' . $RentDateEnd . '</td> 
+                                        <td>' . $RentCost . '</td> 
+                                        <td>' . $RentKilometers . '</td> 
                                        
                                   </tr>';
                     }

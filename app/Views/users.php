@@ -17,7 +17,7 @@
 
         <!-- Nav Item - Dashboard -->
         <li class="nav-item ">
-            <a class="nav-link" href="http://localhost/aoui/?action=home">
+            <a class="nav-link" href="http://localhost/gestasixt_2.0/?action=home">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>Dashboard</span></a>
         </li>
@@ -32,21 +32,21 @@
 
         <!-- Nav Item - users -->
         <li class="nav-item active">
-            <a class="nav-link" href="http://localhost/aoui/?action=users">
+            <a class="nav-link" href="http://localhost/gestasixt_2.0/?action=users">
                 <i class="fas fa-fw fa-table"></i>
                 <span>Users</span></a>
         </li>
 
         <!-- Nav Item - vehicles -->
         <li class="nav-item">
-            <a class="nav-link" href="http://localhost/aoui/?action=vehicles">
+            <a class="nav-link" href="http://localhost/gestasixt_2.0/?action=vehicles">
                 <i class="fas fa-fw fa-table"></i>
                 <span>Vehicles</span></a>
         </li>
 
         <!-- Nav Item - rents -->
         <li class="nav-item">
-            <a class="nav-link" href="http://localhost/aoui/?action=rents">
+            <a class="nav-link" href="http://localhost/gestasixt_2.0/?action=rents">
                 <i class="fas fa-fw fa-table"></i>
                 <span>Rents</span></a>
         </li>

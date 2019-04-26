@@ -32,21 +32,21 @@
 
         <!-- Nav Item - users -->
         <li class="nav-item">
-            <a class="nav-link" href="http://localhost/aoui/?action=users">
+            <a class="nav-link" href="http://localhost/gestasixt_2.0/?action=users">
                 <i class="fas fa-fw fa-table"></i>
                 <span>Users</span></a>
         </li>
 
         <!-- Nav Item - vehicles -->
         <li class="nav-item">
-            <a class="nav-link" href="http://localhost/aoui/?action=vehicles">
+            <a class="nav-link" href="http://localhost/gestasixt_2.0/?action=vehicles">
                 <i class="fas fa-fw fa-table"></i>
                 <span>Vehicles</span></a>
         </li>
 
         <!-- Nav Item - rents -->
         <li class="nav-item">
-            <a class="nav-link" href="http://localhost/aoui/?action=rents">
+            <a class="nav-link" href="http://localhost/gestasixt_2.0/?action=rents">
                 <i class="fas fa-fw fa-table"></i>
                 <span>Rents</span></a>
         </li>
@@ -130,140 +130,192 @@
             <div class="container-fluid">
 
 
-    <div class="row">
-        <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-danger shadow h-100 py-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Nombre de
-                                Vehicules
+                <div class="row">
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-danger shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Nombre de
+                                            Vehicules
+                                        </div>
+
+
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $nbVehicles; ?></div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-car fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
                             </div>
-
-
-                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $nbVehicles; ?></div>
                         </div>
-                        <div class="col-auto">
-                            <i class="fas fa-car fa-2x text-gray-300"></i>
+                    </div>
+                    <br>
+
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-success shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Nombre de
+                                            Locations
+                                        </div>
+
+
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $nbRents; ?></div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-warning shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Nombre
+                                            d'utilisateurs
+                                        </div>
+
+
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $nbUsers; ?></div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-user fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <br>
+                <?php if (isset($_POST['form_submitted'])): ?>
 
-        <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-success shadow h-100 py-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Nombre de
-                                Locations
+                    <h2>Thank You <?php echo $_POST['firstname']; ?> </h2>
+
+                    <p>You have been registered as
+                        <?php echo $_POST['firstname'] . ' ' . $_POST['lastname']; ?>
+                    </p>
+
+                    <p>Go <a href="/registration_form.php">back</a> to the form</p>
+
+                <?php else: ?>
+                    <div style="text-align: center">
+
+                        <h2>Registration Form</h2>
+
+                        <form action="./App/Views/usertruc2.php" method="POST">
+
+                            <div class="row">
+                            <div class="col-xl-3 col-md-6 mb-4">
+                                <div class="card  shadow h-100 py-2">
+                                    <div class="card-body">
+                                        First name:
+                                        <br>
+                                        <input type="text" name="firstname">
+
+                                        <br>
+                                        Last name:
+                                        <br>
+                                        <input type="text" name="lastname">
+                                    </div>
+                                </div>
                             </div>
+                                <div class="col-xl-3 col-md-6 mb-4">
+                                    <div class="card  shadow h-100 py-2">
+                                        <div class="card-body">
+                                            First name:
+                                            <br>
+                                            <input type="text" name="firstname">
+
+                                            <br>
+                                            Last name:
+                                            <br>
+                                            <input type="text" name="lastname">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-md-6 mb-4">
+                                    <div class="card  shadow h-100 py-2">
+                                        <div class="card-body">
+                                            First name:
+                                            <br>
+                                            <input type="text" name="firstname">
+
+                                            <br>
+                                            Last name:
+                                            <br>
+                                            <input type="text" name="lastname">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-md-6 mb-4">
+                                    <div class="card shadow h-100 py-2">
+                                        <div class="card-body">
+                                            First name:
+                                            <br>
+                                            <input type="text" name="firstname">
+
+                                            <br>
 
 
-                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $nbRents; ?></div>
-                        </div>
-                        <div class="col-auto">
-                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
-                        </div>
+
+                                        <input type="hidden" name="form_submitted" value="1"/>
+                                        <br><br>
+
+                                        <input type="submit" value="Submit">
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                        </form>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-warning shadow h-100 py-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Nombre
-                                d'utilisateurs
-                            </div>
+
+                <?php endif; ?>
+                <table class="table table-striped table-bordered table-hover">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Type</th>
+                        <th>Name</th>
+                        <th>First name</th>
+                        <th>Email</th>
+                        <th>Password</th>
+                        <th>Road</th>
+                        <th>City</th>
+                        <th>Postal Code</th>
+                        <th>Telephone</th>
+                        <!--                        <th>Delete</th>-->
+
+                    </tr>
+                    </thead>
+
+                    <tbody>
 
 
-                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $nbUsers; ?></div>
-                        </div>
-                        <div class="col-auto">
-                            <i class="fas fa-user fa-2x text-gray-300"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <?php if (isset($_POST['form_submitted'])): ?>
-
-        <h2>Thank You <?php echo $_POST['firstname']; ?> </h2>
-
-        <p>You have been registered as
-            <?php echo $_POST['firstname'] . ' ' . $_POST['lastname']; ?>
-        </p>
-
-        <p>Go <a href="/registration_form.php">back</a> to the form</p>
-
-    <?php else: ?>
-        <div style="text-align: center">
-            <h2 >Registration Form</h2>
-
-            <form action="./App/Views/usertruc2.php" method="POST">
-
-                First name:
-                <br>
-                <input type="text" name="firstname">
-
-                <br>
-                Last name:
-                <br>
-                <input type="text" name="lastname">
-
-                <input type="hidden" name="form_submitted" value="1" />
-                <br><br>
-
-                <input type="submit" value="Submit">
-
-            </form>
-        </div>
-    <?php endif; ?>
-    <table class="table table-striped table-bordered table-hover">
-        <thead>
-        <tr>
-            <th>ID</th>
-            <th>Type</th>
-            <th>Name</th>
-            <th>First name</th>
-            <th>Email</th>
-            <th>Password</th>
-            <th>Road</th>
-            <th>City</th>
-            <th>Postal Code</th>
-            <th>Telephone</th>
-            <!--                        <th>Delete</th>-->
-
-        </tr>
-        </thead>
-
-        <tbody>
+                    <?php
+                    for ($i = 0; $i < $nbUsers; $i++) {
 
 
-        <?php
-        for ($i = 0; $i < $nbUsers; $i++) {
+                        $json = file_get_contents('http://localhost/gestapi/user/get/all');
+                        $dataUserAll = json_decode($json, true);
+                        $resultatUserAll = $dataUserAll['user'][$i];
 
-
-            $json = file_get_contents('http://localhost/gestapi/user/get/all');
-            $dataUserAll = json_decode($json, true);
-            $resultatUserAll = $dataUserAll['user'][$i];
-
-            $UserId = $resultatUserAll['id'];
-            $UserIdType = $resultatUserAll['idType'];
-            $UserName = $resultatUserAll['name'];
-            $UserFirstname = $resultatUserAll['firstname'];
-            $UserEmail = $resultatUserAll['email'];
-            $UserPassword = $resultatUserAll['password'];
-            $UserAdrRoad = $resultatUserAll['adrRoad'];
-            $UserAdrCity = $resultatUserAll['adrCity'];
-            $UserAdrPc = $resultatUserAll['adrPC'];
-            $UserNumTel = $resultatUserAll['numTel'];
-            echo '<tr>
+                        $UserId = $resultatUserAll['id'];
+                        $UserIdType = $resultatUserAll['idType'];
+                        $UserName = $resultatUserAll['name'];
+                        $UserFirstname = $resultatUserAll['firstname'];
+                        $UserEmail = $resultatUserAll['email'];
+                        $UserPassword = $resultatUserAll['password'];
+                        $UserAdrRoad = $resultatUserAll['adrRoad'];
+                        $UserAdrCity = $resultatUserAll['adrCity'];
+                        $UserAdrPc = $resultatUserAll['adrPC'];
+                        $UserNumTel = $resultatUserAll['numTel'];
+                        echo '<tr>
                                         <td>' . $UserId . '</td> 
                                         <td>' . $UserIdType . '</td> 
                                         <td>' . $UserName . '</td> 
@@ -275,21 +327,18 @@
                                         <td>' . $UserAdrPc . '</td> 
                                         <td>' . $UserNumTel . '</td> 
                                   </tr>';
-        }
-        ?>
+                    }
+                    ?>
 
-        <!--                        <td>{{ absence.getEndDate() }}</td>-->
-        <!--                        <td>{{ absence.getAbsencePattern() }}</td>-->
-        <!--                        <td>{{ absence.getType() }}</td>-->
-        <!--                        <td><a href="{{ path_for('edit_absence', {'absence_id':absence.getId()} ) }}"> <i-->
-        <!--                                        class="fa fa-pencil" aria-hidden="true"></i> </a></td>-->
-        <!--                        <td><a href="#"> <i class="fa fa-times" aria-hidden="true"></i> </a></td>-->
-
-
-    </table>
+                    <!--                        <td>{{ absence.getEndDate() }}</td>-->
+                    <!--                        <td>{{ absence.getAbsencePattern() }}</td>-->
+                    <!--                        <td>{{ absence.getType() }}</td>-->
+                    <!--                        <td><a href="{{ path_for('edit_absence', {'absence_id':absence.getId()} ) }}"> <i-->
+                    <!--                                        class="fa fa-pencil" aria-hidden="true"></i> </a></td>-->
+                    <!--                        <td><a href="#"> <i class="fa fa-times" aria-hidden="true"></i> </a></td>-->
 
 
+                </table>
 
 
-
-</div>
+            </div>
