@@ -33,14 +33,14 @@
         <!-- Nav Item - users -->
         <li class="nav-item">
             <a class="nav-link" href="http://localhost/gestasixt_2.0/?action=users">
-                <i class="fas fa-fw fa-table"></i>
+                <i class="fas fa-fw fa-user"></i>
                 <span>Users</span></a>
         </li>
 
         <!-- Nav Item - vehicles -->
         <li class="nav-item">
             <a class="nav-link" href="http://localhost/gestasixt_2.0/?action=vehicles">
-                <i class="fas fa-fw fa-table"></i>
+                <i class="fas fa-fw fa-car"></i>
                 <span>Vehicles</span></a>
         </li>
 
