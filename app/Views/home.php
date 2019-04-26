@@ -131,7 +131,7 @@
 
 
                 <div class="row">
-                    <div class="col-xl-3 col-md-6 mb-4">
+                    <div class="col-xl-4 col-md-6 mb-4">
                         <div class="card border-left-danger shadow h-100 py-2">
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
@@ -152,7 +152,7 @@
                     </div>
                     <br>
 
-                    <div class="col-xl-3 col-md-6 mb-4">
+                    <div class="col-xl-4 col-md-6 mb-4">
                         <div class="card border-left-success shadow h-100 py-2">
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
@@ -171,7 +171,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-6 mb-4">
+                    <div class="col-xl-4 col-md-6 mb-4">
                         <div class="card border-left-warning shadow h-100 py-2">
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
@@ -209,67 +209,71 @@
                         <form action="./App/Views/usertruc2.php" method="POST">
 
                             <div class="row">
-                            <div class="col-xl-3 col-md-6 mb-4">
-                                <div class="card  shadow h-100 py-2">
-                                    <div class="card-body">
-                                        First name:
-                                        <br>
-                                        <input type="text" name="firstname">
-
-                                        <br>
-                                        Last name:
-                                        <br>
-                                        <input type="text" name="lastname">
-                                    </div>
-                                </div>
-                            </div>
-                                <div class="col-xl-3 col-md-6 mb-4">
+                                <div class="col-xl-4 col-md-6 mb-4">
                                     <div class="card  shadow h-100 py-2">
                                         <div class="card-body">
-                                            First name:
+                                            Prénom :
                                             <br>
-                                            <input type="text" name="firstname">
+                                            <input type="text" name="type">
 
                                             <br>
-                                            Last name:
+                                            Nom :
                                             <br>
-                                            <input type="text" name="lastname">
+                                            <input type="text" name="name">
+
+                                            <br>
+                                            Email :
+                                            <br>
+                                            <input type="text" name="email">
+
+                                            <br>
+                                            Mot de passe :
+                                            <br>
+                                            <input type="password" name="password">
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xl-3 col-md-6 mb-4">
+                                <div class="col-xl-4 col-md-6 mb-4">
                                     <div class="card  shadow h-100 py-2">
                                         <div class="card-body">
-                                            First name:
+                                            Rue :
                                             <br>
-                                            <input type="text" name="firstname">
+                                            <input type="text" name="Road">
 
                                             <br>
-                                            Last name:
+                                            Ville :
                                             <br>
-                                            <input type="text" name="lastname">
+                                            <input type="text" name="City">
+
+                                            <br>
+                                            Code postal :
+                                            <br>
+                                            <input type="text" name="CP">
+
+                                            <br>
+                                            Téléphone :
+                                            <br>
+                                            <input type="text" name="telephone">
+
+
+
+
+                                            <input type="hidden" name="form_submitted" value="1"/>
+
+
+
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xl-3 col-md-6 mb-4">
-                                    <div class="card shadow h-100 py-2">
-                                        <div class="card-body">
-                                            First name:
-                                            <br>
-                                            <input type="text" name="firstname">
 
-                                            <br>
+                                    <div class="col-xl-4 col-md-6 mb-4">
+                                        <div class="card  shadow h-100 py-2">
+                                            <div class="card-body">
 
-
-
-                                        <input type="hidden" name="form_submitted" value="1"/>
-                                        <br><br>
-
-                                        <input type="submit" value="Submit">
+                                                <input type="submit" value="Submit">
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-
 
 
                         </form>
