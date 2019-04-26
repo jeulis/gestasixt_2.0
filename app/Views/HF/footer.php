@@ -3,7 +3,7 @@
                 <footer class="sticky-footer bg-white">
                     <div class="container my-auto">
                         <div class="copyright text-center my-auto">
-                            <span>Copyright &copy; RATELADE William - 2019 - Gestasixt v2.21</span>
+                            <span>Copyright &copy; RATELADE William - 2019 - Gestasixt v2.3</span>
                         </div>
                     </div>
                 </footer>

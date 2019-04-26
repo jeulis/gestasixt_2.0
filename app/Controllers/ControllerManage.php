@@ -11,11 +11,12 @@ namespace Controllers;
 //use Models\Home;
 use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
-
+require  DOC_ROOT_PATH . '../html/gestasixt_2.0/app/Controllers/variables.php';
 
 define('DOC_ROOT_PATH', $_SERVER['DOCUMENT_ROOT'].'/');
 class ControllerManage
 {
+    //fonctions de routage
     public function home()
     {
         $nbUsers = \Models\Home::getNbUsers();
@@ -53,6 +54,13 @@ class ControllerManage
         include DOC_ROOT_PATH . '../html/gestasixt_2.0/app/Views/HF/header.php';
         include DOC_ROOT_PATH . '../html/gestasixt_2.0/app/Views/rents.php';
         include DOC_ROOT_PATH . '../html/gestasixt_2.0/app/Views/HF/footer.php';
+    }
+
+    //fonctions de formulaires
+    public function addUser($idType,$name,$firstname,$email,$password,$adrRoad,$adrCity,$adrPC,$numTel)
+    {
+        $user = \Models\User::addUser($idType,$name,$firstname,$email,$password,$adrRoad,$adrCity,$adrPC,$numTel);
+        $this->home();
     }
 
 

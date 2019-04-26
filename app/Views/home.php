@@ -207,7 +207,7 @@
 
                         <h2>Registration Form</h2>
 
-                        <form action="http://localhost/gestasixt_2.0/?action=home" method="POST">
+                        <form action="http://localhost/gestasixt_2.0/?action=addUser" method="POST">
 
                             <div class="row">
                                 <div class="col-xl-4 col-md-6 mb-4">
@@ -249,7 +249,7 @@
                                             <br>
                                             Code postal :
                                             <br>
-                                            <input type="text" name="CP">
+                                            <input type="text" name="PC">
 
                                             <br>
                                             Téléphone :
