@@ -40,7 +40,7 @@
         <!-- Nav Item - vehicles -->
         <li class="nav-item">
             <a class="nav-link" href="http://localhost/gestasixt_2.0/?action=vehicles">
-                <i class="fas fa-fw fa-car></i>
+                <i class="fas fa-fw fa-car"></i>
                 <span>Vehicles</span></a>
         </li>
 

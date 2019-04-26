@@ -17,7 +17,7 @@
 
         <!-- Nav Item - Dashboard -->
         <li class="nav-item active">
-            <a class="nav-link" href="http://localhost/aoui/?action=home">
+            <a class="nav-link" href="http://localhost/gestasixt_2.0/?action=home">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>Dashboard</span></a>
         </li>
@@ -193,20 +193,20 @@
                 </div>
                 <?php if (isset($_POST['form_submitted'])): ?>
 
-                    <h2>Thank You <?php echo $_POST['firstname']; ?> </h2>
+                    <h2>Merci <?php echo $_POST['firstname']; ?> </h2>
 
                     <p>You have been registered as
-                        <?php echo $_POST['firstname'] . ' ' . $_POST['lastname']; ?>
+                        <?php echo $_POST['firstname'] . ' ' . $_POST['name']; ?>
                     </p>
 
-                    <p>Go <a href="/registration_form.php">back</a> to the form</p>
+                    <p>Go <a href="http://localhost/gestasixt_2.0/?action=home">retour</a> au formulaire</p>
 
                 <?php else: ?>
                     <div style="text-align: center">
 
                         <h2>Registration Form</h2>
 
-                        <form action="./App/Views/usertruc2.php" method="POST">
+                        <form action="http://localhost/gestasixt_2.0/?action=home" method="POST">
 
                             <div class="row">
                                 <div class="col-xl-4 col-md-6 mb-4">
@@ -214,7 +214,7 @@
                                         <div class="card-body">
                                             Prénom :
                                             <br>
-                                            <input type="text" name="type">
+                                            <input type="text" name="firstname">
 
                                             <br>
                                             Nom :
@@ -269,8 +269,12 @@
                                     <div class="col-xl-4 col-md-6 mb-4">
                                         <div class="card  shadow h-100 py-2">
                                             <div class="card-body">
+                                                Type (1=admin , 2=client) :
+                                                <br>
+                                                <input type="text" name="type">
+                                                <br><br>
 
-                                                <input type="submit" value="Submit">
+                                                <input type="submit" value="        Enregistrer        "  class="btn btn-success btn-icon-split">
                                             </div>
                                         </div>
                                     </div>
