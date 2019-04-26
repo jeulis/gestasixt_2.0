@@ -192,11 +192,27 @@
                         </div>
                     </div>
                 </div>
-                <?php if (isset($_POST['form_submitted'])): ?>
+                <?php if (isset($_POST['form_submitted'])):
+                    $idType = $_POST['type'];
+                    $name = $_POST['name'];
+                    $firstname = $_POST['firstname'];
+                    $email = $_POST['email'];
+                    $password = $_POST['password'];
+                    $adrRoad = $_POST['road'];
+                    $adrCity = $_POST['city'];
+                    $adrPC = $_POST['PC'];
+                    $numTel = $_POST['telephone'];
+                    $url = 'http://127.0.0.1/gestapi/user/add/' . $idType . '/' . $name . '/' . $firstname . '/' . $email . '/' .
+                        $password . '/' . $adrRoad . '/' . $adrCity . '/' . $adrPC . '/' . $numTel;
 
-                    <h2>Merci <?php echo $_POST['firstname']; ?> </h2>
+                    $json = file_get_contents($url);
+                    ?>
 
-                    <p>You have been registered as
+
+                    <h2>Merci <?php echo $_POST['firstname'];
+                        //var_dump($url); ?> </h2>
+
+                    <p>Vous avez été enregistré au nom de
                         <?php echo $_POST['firstname'] . ' ' . $_POST['name']; ?>
                     </p>
 
@@ -207,7 +223,7 @@
 
                         <h2>Registration Form</h2>
 
-                        <form action="http://localhost/gestasixt_2.0/?action=addUser" method="POST">
+                        <form action="http://localhost/gestasixt_2.0/?action=home" method="POST">
 
                             <div class="row">
                                 <div class="col-xl-4 col-md-6 mb-4">
@@ -239,12 +255,12 @@
                                         <div class="card-body">
                                             Rue :
                                             <br>
-                                            <input type="text" name="Road">
+                                            <input type="text" name="road">
 
                                             <br>
                                             Ville :
                                             <br>
-                                            <input type="text" name="City">
+                                            <input type="text" name="city">
 
                                             <br>
                                             Code postal :
@@ -257,28 +273,26 @@
                                             <input type="text" name="telephone">
 
 
-
-
                                             <input type="hidden" name="form_submitted" value="1"/>
-
 
 
                                         </div>
                                     </div>
                                 </div>
 
-                                    <div class="col-xl-4 col-md-6 mb-4">
-                                        <div class="card  shadow h-100 py-2">
-                                            <div class="card-body">
-                                                Type (1=admin , 2=client) :
-                                                <br>
-                                                <input type="text" name="type">
-                                                <br><br>
+                                <div class="col-xl-4 col-md-6 mb-4">
+                                    <div class="card  shadow h-100 py-2">
+                                        <div class="card-body">
+                                            Type (1=admin , 2=client) :
+                                            <br>
+                                            <input type="text" name="type">
+                                            <br><br>
 
-                                                <input type="submit" value="        Enregistrer        "  class="btn btn-success btn-icon-split">
-                                            </div>
+                                            <input type="submit" value="        Enregistrer        "
+                                                   class="btn btn-success btn-icon-split">
                                         </div>
                                     </div>
+                                </div>
 
 
                         </form>

@@ -7,13 +7,13 @@
  */
 
 namespace Controllers;
-
+define('DOC_ROOT_PATH', $_SERVER['DOCUMENT_ROOT'].'/');
 //use Models\Home;
 use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
-require  DOC_ROOT_PATH . '../html/gestasixt_2.0/app/Controllers/variables.php';
+include DOC_ROOT_PATH . '../html/gestasixt_2.0/app/Controllers/variables.php';
 
-define('DOC_ROOT_PATH', $_SERVER['DOCUMENT_ROOT'].'/');
+
 class ControllerManage
 {
     //fonctions de routage
