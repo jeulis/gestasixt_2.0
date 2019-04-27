@@ -2,7 +2,7 @@
 
 /**
  * Created by PhpStorm.
- * User: usersio
+ * Users: usersio
  * Date: 18/03/19
  * Time: 16:16
  */
@@ -13,8 +13,6 @@ use RedBeanPHP\R as R;
 
 class Home
 {
-
-
 
 
 

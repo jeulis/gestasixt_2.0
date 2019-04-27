@@ -1,14 +1,14 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: usersio
+ * Users: usersio
  * Date: 18/03/19
  * Time: 15:10
  */
 
 namespace Controllers;
 define('DOC_ROOT_PATH', $_SERVER['DOCUMENT_ROOT'].'/');
-//use Models\Home;
+use \Models;
 use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
 include DOC_ROOT_PATH . '../html/gestasixt_2.0/app/Controllers/variables.php';
@@ -60,7 +60,7 @@ class ControllerManage
 
 //    public function addUser($idType,$name,$firstname,$email,$password,$adrRoad,$adrCity,$adrPC,$numTel)
 //    {
-//        $user = \Models\User::addUser($idType,$name,$firstname,$email,$password,$adrRoad,$adrCity,$adrPC,$numTel);
+//        $user = \Models\Users::addUser($idType,$name,$firstname,$email,$password,$adrRoad,$adrCity,$adrPC,$numTel);
 //        $this->home();
 //    }
 

@@ -166,6 +166,127 @@
                     </div>
 
                 </div>
+                <?php if (isset($_POST['form_submitted'])):
+                    $idType = $_POST['type'];
+                    $name = $_POST['name'];
+                    $firstname = $_POST['firstname'];
+                    $email = $_POST['email'];
+                    $password = $_POST['password'];
+                    $adrRoad = $_POST['road'];
+                    $adrCity = $_POST['city'];
+                    $adrPC = $_POST['PC'];
+                    $numTel = $_POST['telephone'];
+                    $url = 'http://127.0.0.1/gestapi/user/add/' . $idType . '/' . $name . '/' . $firstname . '/' . $email . '/' .
+                        $password . '/' . $adrRoad . '/' . $adrCity . '/' . $adrPC . '/' . $numTel;
+                    $urlManualEncode = str_replace(" ","%20",$url);
+                    //var_dump($url);
+
+                    $json = file_get_contents($urlManualEncode);
+                    ?>
+
+
+                    <h2>Merci <?php echo $_POST['firstname'];?>
+                        <br>
+
+                        <?php //var_dump($url); ?> </h2>
+
+                    <p>Vous avez été enregistré au nom de
+                        <?php echo $_POST['firstname'] . ' ' . $_POST['name']; ?>
+                    </p>
+
+                    <p>Go <a href="http://localhost/gestasixt_2.0/?action=users">retour</a> au formulaire</p>
+
+                <?php else: ?>
+                    <div style="text-align: center">
+
+                        <h2>Formulaire d'enregistrement de véhicule</h2>
+
+                        <form action="http://localhost/gestasixt_2.0/?action=users" method="POST">
+
+                            <div class="row">
+                                <div class="col-xl-4 col-md-6 mb-4">
+                                    <div class="card  shadow h-100 py-2">
+                                        <div class="card-body">
+                                            Marque :
+                                            <br>
+                                            <input type="text" name="brand">
+
+                                            <br>
+                                            Modèle :
+                                            <br>
+                                            <input type="text" name="model">
+
+                                            <br>
+                                            categorie :
+                                            <br>
+                                            <select class="texte" name="id_categorie">
+
+                                                <option name="">Cuisine</option>
+                                                <option name="">Dictionnaire</option>
+                                                <option name="">Informatique</option>
+                                                <option name="">Policier</option>
+                                                <option name="">Préparation concours</option>
+                                                <option name="">Roman</option>
+                                                <option name="">Santé</option>
+                                                <option name="">Science Fiction</option>
+                                                <option name="">Sport</option>
+
+                                                <!-- Fin d'une liste dÃ©roulante -->
+                                            </select>
+
+
+                                            <br>
+                                            Mot de passe :
+                                            <br>
+                                            <input type="password" name="registration">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-md-6 mb-4">
+                                    <div class="card  shadow h-100 py-2">
+                                        <div class="card-body">
+                                            Rue :
+                                            <br>
+                                            <input type="text" name="capacity">
+
+                                            <br>
+                                            Ville (sans espace):
+                                            <br>
+                                            <input type="text" name="color">
+
+                                            <br>
+                                            Code postal :
+                                            <br>
+                                            <input type="text" name="category">
+
+                                            <br>
+                                            Téléphone :
+                                            <br>
+                                            <input type="text" name="nbPlaces">
+
+
+                                            <input type="hidden" name="form_submitted" value="1"/>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-4 col-md-6 mb-4">
+                                    <div class="card  shadow h-100 py-2">
+                                        <div class="card-body">
+
+                                            <input type="submit" value="        Enregistrer        "
+                                                   class="btn btn-success btn-icon-split">
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                        </form>
+                    </div>
+
+                <?php endif; ?>
                 <h1 class="h3 mb-4 text-gray-800">Liste des locations</h1>
                 <table class="table table-striped table-bordered table-hover">
                     <thead>

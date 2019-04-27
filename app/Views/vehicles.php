@@ -165,6 +165,157 @@
                     <br>
 
                 </div>
+                <?php if (isset($_POST['form_submitted'])):
+                    $idType = $_POST['type'];
+                    $name = $_POST['name'];
+                    $firstname = $_POST['firstname'];
+                    $email = $_POST['email'];
+                    $password = $_POST['password'];
+                    $adrRoad = $_POST['road'];
+                    $adrCity = $_POST['city'];
+                    $adrPC = $_POST['PC'];
+                    $numTel = $_POST['telephone'];
+                    $url = 'http://127.0.0.1/gestapi/user/add/' . $idType . '/' . $name . '/' . $firstname . '/' . $email . '/' .
+                        $password . '/' . $adrRoad . '/' . $adrCity . '/' . $adrPC . '/' . $numTel;
+                    $urlManualEncode = str_replace(" ","%20",$url);
+                    //var_dump($url);
+
+                    $json = file_get_contents($urlManualEncode);
+                    ?>
+
+
+                    <h2>Merci <?php echo $_POST['firstname'];?>
+                        <br>
+
+                        <?php //var_dump($url); ?> </h2>
+
+                    <p>Vous avez été enregistré au nom de
+                        <?php echo $_POST['firstname'] . ' ' . $_POST['name']; ?>
+                    </p>
+
+                    <p>Go <a href="http://localhost/gestasixt_2.0/?action=users">retour</a> au formulaire</p>
+
+                <?php else: ?>
+                    <div style="text-align: center">
+
+                        <h2>Formulaire d'enregistrement de véhicule</h2>
+
+                        <form action="http://localhost/gestasixt_2.0/?action=users" method="POST">
+
+                            <div class="row">
+                                <div class="col-xl-4 col-md-6 mb-4">
+                                    <div class="card  shadow h-100 py-2">
+                                        <div class="card-body">
+                                            Marque :
+                                            <br>
+
+                                            <select class="btn btn-primary dropdown-toggle" id="brand" name="brand">
+                                                <option value="">               Marque               </option>
+                                                <option value="1">Renaud</option>
+                                                <option value="2">Peugeot</option>
+                                                <option value="3">Toyota</option>
+                                                <option value="4">Ferrari</option>
+                                                <option value="5">Ford</option>
+                                                <option value="6">Kia</option>
+                                                <option value="7">Dodge</option>
+                                                <option value="8">Audi</option>
+                                                <option value="9">Citroën</option>
+                                                <option value="10">Cadillac</option>
+                                                <option value="11">Volvo</option>
+                                                <option value="12">Mitsubishi</option>
+                                                <option value="13">BWM</option>
+                                                <option value="14">Nissan</option>
+                                                <option value="14">Land Rover</option>
+                                            </select>
+
+                                            <br>
+                                            Modèle :
+                                            <br>
+                                            <input type="text" name="model">
+
+                                            <br>
+                                            Catégorie :
+                                            <br>
+
+                                            <select class="btn btn-primary dropdown-toggle" id="category" name="category">
+                                                <option value="">               Catégorie               </option>
+                                                <option value="1">Citadine</option>
+                                                <option value="2">Utilitaire</option>
+                                                <option value="3">Semi-remorque</option>
+                                                <option value="4">Berline</option>
+                                                <option value="5">Monospace</option>
+                                                <option value="6">Sportive</option>
+                                                <option value="7">Compacte</option>
+                                                <option value="8">Décapotable</option>
+                                            </select>
+
+
+
+                                            <br>
+                                            Couleur :
+                                            <br>
+
+                                            <select class="btn btn-primary dropdown-toggle" id="color" name="color">
+                                                <option value="">               Couleur               </option>
+                                                <option value="1">Noir</option>
+                                                <option value="2">Blanc</option>
+                                                <option value="3">Métalisé</option>
+                                                <option value="4">Gris</option>
+                                                <option value="5">Rouge</option>
+                                                <option value="6">Bleu Roi</option>
+                                                <option value="7">Bleu ciel</option>
+                                                <option value="8">Orange</option>
+                                                <option value="9">Vert</option>
+                                                <option value="10">Gris Mat</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-md-6 mb-4">
+                                    <div class="card  shadow h-100 py-2">
+                                        <div class="card-body">
+                                            Capacité (L) :
+                                            <br>
+                                            <input type="text" name="capacity">
+
+                                            <br>
+                                            Nombre de places:
+                                            <br>
+                                            <input type="text" name="nbPlaces">
+
+                                            <br>
+                                            Kilomètres au compteur :
+                                            <br>
+                                            <input type="text" name="kilometers">
+
+                                            <br>
+                                            Immatriculation :
+                                            <br>
+                                            <input type="text" name="registration">
+
+
+                                            <input type="hidden" name="form_submitted" value="1"/>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-4 col-md-6 mb-4">
+                                    <div class="card  shadow h-100 py-2">
+                                        <div class="card-body">
+
+                                            <input type="submit" value="        Enregistrer        "
+                                                   class="btn btn-success btn-icon-split">
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                        </form>
+                    </div>
+
+                <?php endif; ?>
                 <h1 class="h3 mb-4 text-gray-800">Liste des Vehicules</h1>
                 <table class="table table-striped table-bordered table-hover">
                     <thead>

@@ -197,7 +197,7 @@
                 <?php else: ?>
                     <div style="text-align: center">
 
-                        <h2>Formulaire d'enregistrement</h2>
+                        <h2>Formulaire d'enregistrement d'utilisateur</h2>
 
                         <form action="http://localhost/gestasixt_2.0/?action=users" method="POST">
 

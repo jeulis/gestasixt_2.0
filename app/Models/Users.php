@@ -4,7 +4,7 @@
 namespace Models;
 
 
-class User
+class Users
 {
     public function getNbUsers()
     {
