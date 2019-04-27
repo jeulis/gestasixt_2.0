@@ -1,9 +1,12 @@
-
+<?php
+//define('DOC_ROOT_PATH', $_SERVER['DOCUMENT_ROOT'].'/');
+include DOC_ROOT_PATH . '../html/gestasixt_2.0/app/Views/HF/version.php';
+?>
                 <!-- Footer -->
                 <footer class="sticky-footer bg-white">
                     <div class="container my-auto">
                         <div class="copyright text-center my-auto">
-                            <span>Copyright &copy; RATELADE William - 2019 - Gestasixt v2.32</span>
+                            <span>Copyright &copy; RATELADE William - 2019 - Gestasixt v<?php echo $version ?></span>
                         </div>
                     </div>
                 </footer>

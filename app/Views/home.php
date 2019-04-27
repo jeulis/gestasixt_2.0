@@ -204,13 +204,17 @@
                     $numTel = $_POST['telephone'];
                     $url = 'http://127.0.0.1/gestapi/user/add/' . $idType . '/' . $name . '/' . $firstname . '/' . $email . '/' .
                         $password . '/' . $adrRoad . '/' . $adrCity . '/' . $adrPC . '/' . $numTel;
+                    $urlManualEncode = str_replace(" ","%20",$url);
+                    var_dump($url);
 
-                    $json = file_get_contents($url);
+                    $json = file_get_contents($urlManualEncode);
                     ?>
 
 
-                    <h2>Merci <?php echo $_POST['firstname'];
-                        //var_dump($url); ?> </h2>
+                    <h2>Merci <?php echo $_POST['firstname'];?>
+                        <br>
+
+                    <?php var_dump($url); ?> </h2>
 
                     <p>Vous avez été enregistré au nom de
                         <?php echo $_POST['firstname'] . ' ' . $_POST['name']; ?>
@@ -258,7 +262,7 @@
                                             <input type="text" name="road">
 
                                             <br>
-                                            Ville :
+                                            Ville (sans espace):
                                             <br>
                                             <input type="text" name="city">
 
