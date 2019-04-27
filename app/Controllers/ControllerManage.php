@@ -19,9 +19,9 @@ class ControllerManage
     //fonctions de routage
     public function home()
     {
-        $nbUsers = \Models\Home::getNbUsers();
-        $nbVehicles = \Models\Home::getNbVehicles();
-        $nbRents = \Models\Home::getNbRents();
+        $nbUsers = \Models\Users::getNbUsers();
+        $nbVehicles = \Models\Vehicles::getNbVehicles();
+        $nbRents = \Models\Rents::getNbRents();
         $title = 'Home';
 
         include DOC_ROOT_PATH . '../html/gestasixt_2.0/app/Views/HF/header.php';
@@ -30,7 +30,7 @@ class ControllerManage
     }
     public function users()
     {
-        $nbUsers = \Models\Home::getNbUsers();
+        $nbUsers = \Models\Users::getNbUsers();
         $title = 'Users';
 
         include DOC_ROOT_PATH . '../html/gestasixt_2.0/app/Views/HF/header.php';
@@ -39,7 +39,7 @@ class ControllerManage
     }
     public function vehicles()
     {
-        $nbVehicles = \Models\Home::getNbVehicles();
+        $nbVehicles = \Models\Vehicles::getNbVehicles();
         $title = 'Vehicles';
 
         include DOC_ROOT_PATH . '../html/gestasixt_2.0/app/Views/HF/header.php';
@@ -48,7 +48,7 @@ class ControllerManage
     }
     public function rents()
     {
-        $nbRents = \Models\Home::getNbRents();
+        $nbRents = \Models\Rents::getNbRents();
         $title = 'Rents';
 
         include DOC_ROOT_PATH . '../html/gestasixt_2.0/app/Views/HF/header.php';
@@ -57,11 +57,12 @@ class ControllerManage
     }
 
     //fonctions de formulaires
-    public function addUser($idType,$name,$firstname,$email,$password,$adrRoad,$adrCity,$adrPC,$numTel)
-    {
-        $user = \Models\User::addUser($idType,$name,$firstname,$email,$password,$adrRoad,$adrCity,$adrPC,$numTel);
-        $this->home();
-    }
+
+//    public function addUser($idType,$name,$firstname,$email,$password,$adrRoad,$adrCity,$adrPC,$numTel)
+//    {
+//        $user = \Models\User::addUser($idType,$name,$firstname,$email,$password,$adrRoad,$adrCity,$adrPC,$numTel);
+//        $this->home();
+//    }
 
 
 }

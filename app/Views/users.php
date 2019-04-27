@@ -164,6 +164,117 @@
                         </div>
                     </div>
                 </div>
+                <?php if (isset($_POST['form_submitted'])):
+                    $idType = $_POST['type'];
+                    $name = $_POST['name'];
+                    $firstname = $_POST['firstname'];
+                    $email = $_POST['email'];
+                    $password = $_POST['password'];
+                    $adrRoad = $_POST['road'];
+                    $adrCity = $_POST['city'];
+                    $adrPC = $_POST['PC'];
+                    $numTel = $_POST['telephone'];
+                    $url = 'http://127.0.0.1/gestapi/user/add/' . $idType . '/' . $name . '/' . $firstname . '/' . $email . '/' .
+                        $password . '/' . $adrRoad . '/' . $adrCity . '/' . $adrPC . '/' . $numTel;
+                    $urlManualEncode = str_replace(" ","%20",$url);
+                    //var_dump($url);
+
+                    $json = file_get_contents($urlManualEncode);
+                    ?>
+
+
+                    <h2>Merci <?php echo $_POST['firstname'];?>
+                        <br>
+
+                        <?php //var_dump($url); ?> </h2>
+
+                    <p>Vous avez été enregistré au nom de
+                        <?php echo $_POST['firstname'] . ' ' . $_POST['name']; ?>
+                    </p>
+
+                    <p>Go <a href="http://localhost/gestasixt_2.0/?action=users">retour</a> au formulaire</p>
+
+                <?php else: ?>
+                    <div style="text-align: center">
+
+                        <h2>Formulaire d'enregistrement</h2>
+
+                        <form action="http://localhost/gestasixt_2.0/?action=users" method="POST">
+
+                            <div class="row">
+                                <div class="col-xl-4 col-md-6 mb-4">
+                                    <div class="card  shadow h-100 py-2">
+                                        <div class="card-body">
+                                            Prénom :
+                                            <br>
+                                            <input type="text" name="firstname">
+
+                                            <br>
+                                            Nom :
+                                            <br>
+                                            <input type="text" name="name">
+
+                                            <br>
+                                            Email :
+                                            <br>
+                                            <input type="text" name="email">
+
+                                            <br>
+                                            Mot de passe :
+                                            <br>
+                                            <input type="password" name="password">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-md-6 mb-4">
+                                    <div class="card  shadow h-100 py-2">
+                                        <div class="card-body">
+                                            Rue :
+                                            <br>
+                                            <input type="text" name="road">
+
+                                            <br>
+                                            Ville (sans espace):
+                                            <br>
+                                            <input type="text" name="city">
+
+                                            <br>
+                                            Code postal :
+                                            <br>
+                                            <input type="text" name="PC">
+
+                                            <br>
+                                            Téléphone :
+                                            <br>
+                                            <input type="text" name="telephone">
+
+
+                                            <input type="hidden" name="form_submitted" value="1"/>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-4 col-md-6 mb-4">
+                                    <div class="card  shadow h-100 py-2">
+                                        <div class="card-body">
+                                            Type (1=admin , 2=client) :
+                                            <br>
+                                            <input type="text" name="type">
+                                            <br><br>
+
+                                            <input type="submit" value="        Enregistrer        "
+                                                   class="btn btn-success btn-icon-split">
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                        </form>
+                    </div>
+
+                <?php endif; ?>
                 <br>
                 <!-- Page Heading -->
                 <h1 class="h3 mb-4 text-gray-800">Liste des Utilisateurs</h1>
