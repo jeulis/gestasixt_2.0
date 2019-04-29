@@ -4,7 +4,7 @@
 <div id="wrapper">
 
     <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-warning sidebar sidebar-dark accordion" id="accordionSidebar">
+    <ul class="navbar-nav bg-gray-900 sidebar sidebar-dark accordion" id="accordionSidebar">
 
         <!-- Sidebar - Brand -->
         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
@@ -156,7 +156,7 @@
                                         <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $nbVehicles; ?></div>
                                     </div>
                                     <div class="col-auto">
-                                        <i class="fas fa-car fa-2x text-gray-300"></i>
+                                        <i class="fas fa-car fa-2x text-primary"></i>
                                     </div>
                                 </div>
                             </div>

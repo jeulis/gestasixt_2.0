@@ -37,7 +37,6 @@ class ComposerStaticInit712f48baec86666457376b8ffa63f6ab
         array (
             'Firebase\\JWT\\' => 13,
             'FastRoute\\' => 10,
-            'Faker\\' => 6,
         ),
         'C' => 
         array (
@@ -81,10 +80,6 @@ class ComposerStaticInit712f48baec86666457376b8ffa63f6ab
         'FastRoute\\' => 
         array (
             0 => __DIR__ . '/..' . '/nikic/fast-route/src',
-        ),
-        'Faker\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker',
         ),
         'Controllers\\' => 
         array (

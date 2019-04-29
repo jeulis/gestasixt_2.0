@@ -4,7 +4,7 @@
 <div id="wrapper">
 
     <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-warning sidebar sidebar-dark accordion" id="accordionSidebar">
+    <ul class="navbar-nav bg-gray-900 sidebar sidebar-dark accordion" id="accordionSidebar">
 
         <!-- Sidebar - Brand -->
         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
@@ -137,7 +137,7 @@
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
-                                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Nombre de
+                                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Nombre de
                                             Vehicules
                                         </div>
 
@@ -145,7 +145,7 @@
                                         <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $nbVehicles; ?></div>
                                     </div>
                                     <div class="col-auto">
-                                        <i class="fas fa-car fa-2x text-gray-300"></i>
+                                        <i class="fas fa-car fa-2x text-primary"></i>
                                     </div>
                                 </div>
                             </div>
@@ -154,19 +154,19 @@
                     <br>
 
                     <div class="col-xl-4 col-md-6 mb-4">
-                        <div class="card border-left-success shadow h-100 py-2">
+                        <div class="card border-left-success shadow h-100 py-2" >
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
-                                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Nombre de
+                                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Nombre de
                                             Locations
                                         </div>
 
 
                                         <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $nbRents; ?></div>
                                     </div>
-                                    <div class="col-auto">
-                                        <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                    <div class="col-auto" >
+                                        <i class="fas fa-dollar-sign fa-2x text-success" ></i>
                                     </div>
                                 </div>
                             </div>
@@ -185,7 +185,7 @@
                                         <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $nbUsers; ?></div>
                                     </div>
                                     <div class="col-auto">
-                                        <i class="fas fa-user fa-2x text-gray-300"></i>
+                                        <i class="fas fa-user fa-2x text-warning"></i>
                                     </div>
                                 </div>
                             </div>
