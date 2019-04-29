@@ -1,3 +1,5 @@
+
+
 <body id="page-top">
 
 <!-- Page Wrapper -->
@@ -164,7 +166,10 @@
                         </div>
                     </div>
                 </div>
-                <?php if (isset($_POST['form_submitted'])):
+                <?php
+
+
+                if (isset($_POST['form_submitted'])):
                     $idType = $_POST['type'];
                     $name = $_POST['name'];
                     $firstname = $_POST['firstname'];
@@ -174,7 +179,7 @@
                     $adrCity = $_POST['city'];
                     $adrPC = $_POST['PC'];
                     $numTel = $_POST['telephone'];
-                    $url = 'http://127.0.0.1/gestapi/user/add/' . $idType . '/' . $name . '/' . $firstname . '/' . $email . '/' .
+                    $url =  'http://127.0.0.1/gestapi/user/add/' . $idType . '/' . $name . '/' . $firstname . '/' . $email . '/' .
                         $password . '/' . $adrRoad . '/' . $adrCity . '/' . $adrPC . '/' . $numTel;
                     $urlManualEncode = str_replace(" ","%20",$url);
                     //var_dump($url);
@@ -259,9 +264,15 @@
                                 <div class="col-xl-4 col-md-6 mb-4">
                                     <div class="card  shadow h-100 py-2">
                                         <div class="card-body">
-                                            Type (1=admin , 2=client) :
+                                            Type :
                                             <br>
-                                            <input type="text" name="type">
+
+                                            <select class="btn btn-primary dropdown-toggle" id="type" name="type">
+                                                <option value="">               Type               </option>
+                                                <option value="1">Admin</option>
+                                                <option value="2">Client</option>
+
+                                            </select>
                                             <br><br>
 
                                             <input type="submit" value="        Enregistrer        "
@@ -286,7 +297,7 @@
                         <th>Name</th>
                         <th>First name</th>
                         <th>Email</th>
-                        <th>Password</th>
+
                         <th>Road</th>
                         <th>City</th>
                         <th>Postal Code</th>
@@ -321,7 +332,7 @@
                         $UserName = $resultatUserAll['name'];
                         $UserFirstname = $resultatUserAll['firstname'];
                         $UserEmail = $resultatUserAll['email'];
-                        $UserPassword = $resultatUserAll['password'];
+
                         $UserAdrRoad = $resultatUserAll['adrRoad'];
                         $UserAdrCity = $resultatUserAll['adrCity'];
                         $UserAdrPc = $resultatUserAll['adrPC'];
@@ -332,7 +343,7 @@
                                         <td>' . $UserName . '</td> 
                                         <td>' . $UserFirstname . '</td> 
                                         <td>' . $UserEmail . '</td> 
-                                        <td>' . $UserPassword . '</td> 
+
                                         <td>' . $UserAdrRoad . '</td> 
                                         <td>' . $UserAdrCity . '</td> 
                                         <td>' . $UserAdrPc . '</td> 

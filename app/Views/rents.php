@@ -167,17 +167,18 @@
 
                 </div>
                 <?php if (isset($_POST['form_submitted'])):
-                    $idType = $_POST['type'];
-                    $name = $_POST['name'];
-                    $firstname = $_POST['firstname'];
-                    $email = $_POST['email'];
-                    $password = $_POST['password'];
-                    $adrRoad = $_POST['road'];
-                    $adrCity = $_POST['city'];
-                    $adrPC = $_POST['PC'];
-                    $numTel = $_POST['telephone'];
-                    $url = 'http://127.0.0.1/gestapi/user/add/' . $idType . '/' . $name . '/' . $firstname . '/' . $email . '/' .
-                        $password . '/' . $adrRoad . '/' . $adrCity . '/' . $adrPC . '/' . $numTel;
+                    $model = $_POST['model'];
+                    $nbPlaces = $_POST['nbPlaces'];
+                    $kilometers = $_POST['kilometers'];
+                    $registration = $_POST['registration'];
+                    $capacity = $_POST['capacity'];
+                    $color = $_POST['color'];
+                    $category = $_POST['category'];
+                    $brand = $_POST['brand'];
+                    $idAgency = $_POST['idAgency'];
+
+                    $url = 'http://127.0.0.1/gestapi/vehicle/add/' . $brand . '/' . $model . '/' . $category . '/' . $color . '/' .
+                        $idAgency . '/' . $nbPlaces . '/' . $kilometers . '/' . $registration . '/' . $capacity;
                     $urlManualEncode = str_replace(" ","%20",$url);
                     //var_dump($url);
 
@@ -185,23 +186,24 @@
                     ?>
 
 
-                    <h2>Merci <?php echo $_POST['firstname'];?>
+                    <h2>Merci
                         <br>
 
                         <?php //var_dump($url); ?> </h2>
 
-                    <p>Vous avez été enregistré au nom de
-                        <?php echo $_POST['firstname'] . ' ' . $_POST['name']; ?>
+                    <p>Le véhicule :
+                        <?php echo  $_POST['model']; ?>
+                        a été enregistré
                     </p>
 
-                    <p>Go <a href="http://localhost/gestasixt_2.0/?action=users">retour</a> au formulaire</p>
+                    <p>Go <a href="http://localhost/gestasixt_2.0/?action=vehicles">retour</a> au formulaire</p>
 
                 <?php else: ?>
                     <div style="text-align: center">
 
                         <h2>Formulaire d'enregistrement de véhicule</h2>
 
-                        <form action="http://localhost/gestasixt_2.0/?action=users" method="POST">
+                        <form action="http://localhost/gestasixt_2.0/?action=vehicles" method="POST">
 
                             <div class="row">
                                 <div class="col-xl-4 col-md-6 mb-4">
@@ -209,7 +211,25 @@
                                         <div class="card-body">
                                             Marque :
                                             <br>
-                                            <input type="text" name="brand">
+
+                                            <select class="btn btn-primary dropdown-toggle" id="brand" name="brand">
+                                                <option value="">               Marque               </option>
+                                                <option value="1">Renault</option>
+                                                <option value="2">Peugeot</option>
+                                                <option value="3">Toyota</option>
+                                                <option value="4">Ferrari</option>
+                                                <option value="5">Ford</option>
+                                                <option value="6">Kia</option>
+                                                <option value="7">Dodge</option>
+                                                <option value="8">Audi</option>
+                                                <option value="9">Citroën</option>
+                                                <option value="10">Cadillac</option>
+                                                <option value="11">Volvo</option>
+                                                <option value="12">Mitsubishi</option>
+                                                <option value="13">BWM</option>
+                                                <option value="14">Nissan</option>
+                                                <option value="14">Land Rover</option>
+                                            </select>
 
                                             <br>
                                             Modèle :
@@ -217,52 +237,64 @@
                                             <input type="text" name="model">
 
                                             <br>
-                                            categorie :
+                                            Catégorie :
                                             <br>
-                                            <select class="texte" name="id_categorie">
 
-                                                <option name="">Cuisine</option>
-                                                <option name="">Dictionnaire</option>
-                                                <option name="">Informatique</option>
-                                                <option name="">Policier</option>
-                                                <option name="">Préparation concours</option>
-                                                <option name="">Roman</option>
-                                                <option name="">Santé</option>
-                                                <option name="">Science Fiction</option>
-                                                <option name="">Sport</option>
-
-                                                <!-- Fin d'une liste dÃ©roulante -->
+                                            <select class="btn btn-primary dropdown-toggle" id="category" name="category">
+                                                <option value="">               Catégorie               </option>
+                                                <option value="1">Citadine</option>
+                                                <option value="2">Utilitaire</option>
+                                                <option value="3">Semi-remorque</option>
+                                                <option value="4">Berline</option>
+                                                <option value="5">Monospace</option>
+                                                <option value="6">Sportive</option>
+                                                <option value="7">Compacte</option>
+                                                <option value="8">Décapotable</option>
                                             </select>
 
 
+
                                             <br>
-                                            Mot de passe :
+                                            Couleur :
                                             <br>
-                                            <input type="password" name="registration">
+
+                                            <select class="btn btn-primary dropdown-toggle" id="color" name="color">
+                                                <option value="">               Couleur               </option>
+                                                <option value="1">Noir</option>
+                                                <option value="2">Blanc</option>
+                                                <option value="3">Métalisé</option>
+                                                <option value="4">Gris</option>
+                                                <option value="5">Rouge</option>
+                                                <option value="6">Bleu Roi</option>
+                                                <option value="7">Bleu ciel</option>
+                                                <option value="8">Orange</option>
+                                                <option value="9">Vert</option>
+                                                <option value="10">Gris Mat</option>
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-xl-4 col-md-6 mb-4">
                                     <div class="card  shadow h-100 py-2">
                                         <div class="card-body">
-                                            Rue :
+                                            Capacité (L) :
                                             <br>
                                             <input type="text" name="capacity">
 
                                             <br>
-                                            Ville (sans espace):
-                                            <br>
-                                            <input type="text" name="color">
-
-                                            <br>
-                                            Code postal :
-                                            <br>
-                                            <input type="text" name="category">
-
-                                            <br>
-                                            Téléphone :
+                                            Nombre de places:
                                             <br>
                                             <input type="text" name="nbPlaces">
+
+                                            <br>
+                                            Kilomètres au compteur :
+                                            <br>
+                                            <input type="text" name="kilometers">
+
+                                            <br>
+                                            Immatriculation :
+                                            <br>
+                                            <input type="text" name="registration">
 
 
                                             <input type="hidden" name="form_submitted" value="1"/>
@@ -275,6 +307,10 @@
                                 <div class="col-xl-4 col-md-6 mb-4">
                                     <div class="card  shadow h-100 py-2">
                                         <div class="card-body">
+                                            Id Agence :
+                                            <br>
+                                            <input type="text" name="idAgency">
+                                            <br><br>
 
                                             <input type="submit" value="        Enregistrer        "
                                                    class="btn btn-success btn-icon-split">
