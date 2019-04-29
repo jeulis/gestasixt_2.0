@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le :  ven. 26 avr. 2019 à 20:31
+-- Généré le :  lun. 29 avr. 2019 à 14:59
 -- Version du serveur :  10.1.38-MariaDB-0ubuntu0.18.04.1
--- Version de PHP :  7.2.15-0ubuntu0.18.04.2
+-- Version de PHP :  7.2.17-0ubuntu0.18.04.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -39,7 +39,8 @@ CREATE DEFINER=`usersio`@`%` PROCEDURE `getAllUsers` ()  NO SQL
 select * from user$$
 
 CREATE DEFINER=`usersio`@`%` PROCEDURE `getAllVehicles` ()  NO SQL
-SELECT vehicle.model, vehicle.nbPlaces, vehicle.kilometers, vehicle.registration, vehicle.capacity, vehicleColor.libelle as 'color', vehicleCategory.libelle as 'category', vehicleBrand.libelle as 'brand' FROM vehicle, vehicleColor, vehicleBrand, vehicleCategory WHERE vehicle.idColor = vehicleColor.id AND vehicle.idBrand = vehicleBrand.id AND vehicle.idCategory = vehicleCategory.id$$
+SELECT vehicle.id, vehicle.model, vehicle.nbPlaces, vehicle.kilometers, vehicle.registration, vehicle.capacity, vehicle.idAgency, vehicleColor.libelle as 'color', vehicleCategory.libelle as 'category', vehicleBrand.libelle as 'brand' FROM vehicle, vehicleColor, vehicleBrand, vehicleCategory WHERE vehicle.idColor = vehicleColor.id AND vehicle.idBrand = vehicleBrand.id AND vehicle.idCategory = vehicleCategory.id
+ORDER BY vehicle.id$$
 
 CREATE DEFINER=`usersio`@`%` PROCEDURE `getOneUser` (IN `i_idUser` INT(11) UNSIGNED)  NO SQL
 SELECT * FROM user WHERE id = @i_idUser$$
@@ -284,7 +285,10 @@ INSERT INTO `user` (`id`, `idType`, `name`, `firstname`, `email`, `password`, `a
 (3, 2, 'Medhi', 'Benchrif', 'medhi.benchrif@gmail.com', 'pwmedhibenchrif', '45 rue du panier de yoplait', 'yaourt-ville', 87000, '0654659887'),
 (4, 2, 'Robert', 'Alexandra', 'alexandra.robert@gmail.com', 'pwalexandrarobert', '12 rue du gravier', 'rocherCity', 65000, '0645122378'),
 (5, 2, 'Mozzalo', 'Roxanne', 'roxanne.mozzalo@gmail.com', 'pwroxannemozzalo', '65 Rue des fruits', 'pomme-sur-rhone', 11250, '0754653298'),
-(7, 2, 'Bess', 'Camil', 'camil.bess@jtm.love', 'pwcamilbess', '10 ter rue de la robe', 'belleville sous le rocher', 84000, '0785452632');
+(7, 2, 'Bess', 'Camil', 'camil.bess@jtm.love', 'pwcamilbess', '10 ter rue de la robe', 'belleville sous le rocher', 84000, '0785452632'),
+(8, 2, 'DRAPPIER', 'Quentin', 'drappierq@gmail.com', 'azerty', '5, La poiraudière', 'SaintFlaiveDesLoups', 85150, '0781727521'),
+(9, 2, 'gouyonnal', 'theal', 'gouyonnaise@paulchaunu.fr', 'uuruhf', 'rue des gens', 'VilleSainte', 87542, '0754213265'),
+(10, 2, 'miquel', 'adrien', 'adrien.miquel@gobelin.com', 'pwmiquel', '4 rue d\'aubigny', 'Aubigny', 85400, '0516457889');
 
 -- --------------------------------------------------------
 
@@ -428,7 +432,9 @@ INSERT INTO `vehicle` (`id`, `idBrand`, `model`, `idCategory`, `idColor`, `idAge
 (99, 5, 'Mirage', 7, 7, 15, 7, 107193, 'IT 442 CZ', 4472),
 (100, 12, 'Mirage', 6, 1, 3, 7, 131657, 'DU 934 FG', 8233),
 (101, 1, 'laguna', 4, 2, 5, 8, 600000, 'JA444AJ', 40),
-(102, 6, 'ouitoutafait', 5, 4, 46, 4, 120000, 'JU462KL', 45);
+(102, 6, 'ouitoutafait', 5, 4, 46, 4, 120000, 'JU462KL', 45),
+(103, 5, 'Mustang', 6, 8, 8, 4, 65000, 'ML457JG', 400),
+(104, 2, '308 Phase 2', 4, 1, 5, 5, 16000, 'ML 752 KJ', 500);
 
 -- --------------------------------------------------------
 
@@ -589,13 +595,13 @@ ALTER TABLE `rent`
 -- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT pour la table `vehicle`
 --
 ALTER TABLE `vehicle`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=105;
 
 --
 -- AUTO_INCREMENT pour la table `vehicleBrand`
