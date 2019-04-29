@@ -211,21 +211,21 @@
                                         <div class="card-body">
                                             Date de départ :
                                             <br>
-                                            <input type="date" name="dateStart">
+                                            <input type="date" name="DateStart">
                                             <br>
-                                            Date de fin :
+                                            Date d'arrivée :
                                             <br>
-                                            <input type="date" name="dateEnd">
-                                            <br>
-
-                                            Date de départ :
-                                            <br>
-                                            <input type="datetime-local" name="dateStart">
+                                            <input type="date" name="DateEnd">
                                             <br>
 
-                                            Date de départ :
+                                            ID Agence de départ :
                                             <br>
-                                            <input type="datetime-local" name="dateStart">
+                                            <input type="datetime-local" name="IdStartAgency">
+                                            <br>
+
+                                            ID Agence d'arrivée :
+                                            <br>
+                                            <input type="datetime-local" name="IdEndAgency">
                                             <br>
                                         </div>
                                     </div>
@@ -238,9 +238,14 @@
 
 
                                             <br>
-                                            Modèle :
+                                            Coût :
                                             <br>
-                                            <input type="text" name="model">
+                                            <input type="text" name="cost">
+
+                                            <br>
+                                            Distance (kilomètres) :
+                                            <br>
+                                            <input type="text" name="kilometers">
 
                                             <br>
                                             Catégorie :
