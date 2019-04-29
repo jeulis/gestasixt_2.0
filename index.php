@@ -15,12 +15,16 @@ if (isset($_GET['action'])) {
     elseif ($_GET['action'] == 'rents') {
         \Controllers\ControllerManage::rents();
     }
+    else {
+        \Controllers\ControllerManage::error();
+    }
 
 
 }
 else {
     \Controllers\ControllerManage::home();
 }
+
 
 //if (isset($_GET['controller'])) {
 //    if (isset($_GET['action'])) {

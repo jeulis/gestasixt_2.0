@@ -209,27 +209,33 @@
                                 <div class="col-xl-4 col-md-6 mb-4">
                                     <div class="card  shadow h-100 py-2">
                                         <div class="card-body">
-                                            Marque :
+                                            Date de départ :
+                                            <br>
+                                            <input type="date" name="dateStart">
+                                            <br>
+                                            Date de fin :
+                                            <br>
+                                            <input type="date" name="dateEnd">
                                             <br>
 
-                                            <select class="btn btn-primary dropdown-toggle" id="brand" name="brand">
-                                                <option value="">               Marque               </option>
-                                                <option value="1">Renault</option>
-                                                <option value="2">Peugeot</option>
-                                                <option value="3">Toyota</option>
-                                                <option value="4">Ferrari</option>
-                                                <option value="5">Ford</option>
-                                                <option value="6">Kia</option>
-                                                <option value="7">Dodge</option>
-                                                <option value="8">Audi</option>
-                                                <option value="9">Citroën</option>
-                                                <option value="10">Cadillac</option>
-                                                <option value="11">Volvo</option>
-                                                <option value="12">Mitsubishi</option>
-                                                <option value="13">BWM</option>
-                                                <option value="14">Nissan</option>
-                                                <option value="14">Land Rover</option>
-                                            </select>
+                                            Date de départ :
+                                            <br>
+                                            <input type="datetime-local" name="dateStart">
+                                            <br>
+
+                                            Date de départ :
+                                            <br>
+                                            <input type="datetime-local" name="dateStart">
+                                            <br>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-md-6 mb-4">
+                                    <div class="card  shadow h-100 py-2">
+                                        <div class="card-body">
+
+
+
 
                                             <br>
                                             Modèle :

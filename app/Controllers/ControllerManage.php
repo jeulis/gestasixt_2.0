@@ -55,6 +55,14 @@ class ControllerManage
         include DOC_ROOT_PATH . '../html/gestasixt_2.0/app/Views/rents.php';
         include DOC_ROOT_PATH . '../html/gestasixt_2.0/app/Views/HF/footer.php';
     }
+    public function error()
+    {
+        $title = '404 Error';
+
+        include DOC_ROOT_PATH . '../html/gestasixt_2.0/app/Views/HF/header.php';
+        include DOC_ROOT_PATH . '../html/gestasixt_2.0/app/Views/404.php';
+        include DOC_ROOT_PATH . '../html/gestasixt_2.0/app/Views/HF/footer.php';
+    }
 
     //fonctions de formulaires
 
