@@ -205,7 +205,7 @@
                         <form action="http://localhost/gestasixt_2.0/?action=vehicles" method="POST">
 
                             <div class="row">
-                                <div class="col-xl-4 col-md-6 mb-4">
+                                <div class="col-xl-6 col-md-6 mb-4">
                                     <div class="card  shadow h-100 py-2">
                                         <div class="card-body">
                                             Marque :
@@ -233,7 +233,7 @@
                                             <br>
                                             Modèle :
                                             <br>
-                                            <input type="text" name="model">
+                                            <input type="text" class="btn btn-primary btn-icon-split" name="model">
 
                                             <br>
                                             Catégorie :
@@ -273,27 +273,32 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xl-4 col-md-6 mb-4">
+                                <div class="col-xl-6 col-md-6 mb-4">
                                     <div class="card  shadow h-100 py-2">
                                         <div class="card-body">
                                             Capacité (L) :
                                             <br>
-                                            <input type="text" name="capacity">
+                                            <input type="text" class="btn btn-primary btn-icon-split" name="capacity">
 
                                             <br>
                                             Nombre de places:
                                             <br>
-                                            <input type="text" name="nbPlaces">
+                                            <input type="text" class="btn btn-primary btn-icon-split" name="nbPlaces">
 
                                             <br>
                                             Kilomètres au compteur :
                                             <br>
-                                            <input type="text" name="kilometers">
+                                            <input type="text" class="btn btn-primary btn-icon-split" name="kilometers">
 
                                             <br>
                                             Immatriculation :
                                             <br>
-                                            <input type="text" name="registration">
+                                            <input type="text" class="btn btn-primary btn-icon-split" name="registration">
+                                            <br>
+
+                                            Id Agence :
+                                            <br>
+                                            <input type="text" class="btn btn-primary btn-icon-split" name="idAgency">
 
 
                                             <input type="hidden" name="form_submitted" value="1"/>
@@ -303,16 +308,12 @@
                                     </div>
                                 </div>
 
-                                <div class="col-xl-4 col-md-6 mb-4">
+                                <div class="col-xl-12 col-md-6 mb-4">
                                     <div class="card  shadow h-100 py-2">
                                         <div class="card-body">
-                                            Id Agence :
-                                            <br>
-                                            <input type="text" name="idAgency">
-                                            <br><br>
-
                                             <input type="submit" value="        Enregistrer        "
-                                                   class="btn btn-success btn-icon-split">
+                                                   class="btn btn-info  btn-lg">
+
                                         </div>
                                     </div>
                                 </div>

@@ -207,51 +207,62 @@
                         <form action="http://localhost/gestasixt_2.0/?action=users" method="POST">
 
                             <div class="row">
-                                <div class="col-xl-4 col-md-6 mb-4">
+                                <div class="col-xl-6 col-md-6 mb-4">
                                     <div class="card  shadow h-100 py-2">
                                         <div class="card-body">
                                             Prénom :
                                             <br>
-                                            <input type="text" name="firstname">
+                                            <input type="text" class="btn btn-warning btn-icon-split" name="firstname">
 
                                             <br>
                                             Nom :
                                             <br>
-                                            <input type="text" name="name">
+                                            <input type="text" class="btn btn-warning btn-icon-split" name="name">
 
                                             <br>
                                             Email :
                                             <br>
-                                            <input type="text" name="email">
+                                            <input type="text" class="btn btn-warning btn-icon-split" name="email">
 
                                             <br>
                                             Mot de passe :
                                             <br>
-                                            <input type="password" name="password">
+                                            <input type="password" class="btn btn-warning btn-icon-split" name="password">
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xl-4 col-md-6 mb-4">
+                                <div class="col-xl-6 col-md-6 mb-4">
                                     <div class="card  shadow h-100 py-2">
                                         <div class="card-body">
                                             Rue :
                                             <br>
-                                            <input type="text" name="road">
+                                            <input type="text" class="btn btn-warning btn-icon-split" name="road">
 
                                             <br>
                                             Ville (sans espace):
                                             <br>
-                                            <input type="text" name="city">
+                                            <input type="text" class="btn btn-warning btn-icon-split" name="city">
 
                                             <br>
                                             Code postal :
                                             <br>
-                                            <input type="text" name="PC">
+                                            <input type="text" class="btn btn-warning btn-icon-split" name="PC">
 
                                             <br>
                                             Téléphone :
                                             <br>
-                                            <input type="text" name="telephone">
+                                            <input type="text" class="btn btn-warning btn-icon-split" name="telephone">
+                                            <br>
+
+                                            Type :
+                                            <br>
+
+                                            <select class="btn btn-warning dropdown-toggle" id="type" name="type">
+                                                <option value="">               Type               </option>
+                                                <option value="1">Admin</option>
+                                                <option value="2">Client</option>
+
+                                            </select>
 
 
                                             <input type="hidden" name="form_submitted" value="1"/>
@@ -261,22 +272,12 @@
                                     </div>
                                 </div>
 
-                                <div class="col-xl-4 col-md-6 mb-4">
+                                <div class="col-xl-12 col-md-6 mb-4">
                                     <div class="card  shadow h-100 py-2">
                                         <div class="card-body">
-                                            Type :
-                                            <br>
-
-                                            <select class="btn btn-primary dropdown-toggle" id="type" name="type">
-                                                <option value="">               Type               </option>
-                                                <option value="1">Admin</option>
-                                                <option value="2">Client</option>
-
-                                            </select>
-                                            <br><br>
-
                                             <input type="submit" value="        Enregistrer        "
-                                                   class="btn btn-success btn-icon-split">
+                                                   class="btn btn-info  btn-lg">
+
                                         </div>
                                     </div>
                                 </div>

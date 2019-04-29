@@ -167,18 +167,17 @@
 
                 </div>
                 <?php if (isset($_POST['form_submitted'])):
-                    $model = $_POST['model'];
-                    $nbPlaces = $_POST['nbPlaces'];
+                    $idVehicle = $_POST['idVehicle'];
+                    $idUser = $_POST['idUser'];
+                    $idStartAgency = $_POST['idStartAgency'];
+                    $idEndAgency = $_POST['idEndAgency'];
+                    $dateStart = $_POST['DateStart'];
+                    $dateEnd = $_POST['DateEnd'];
+                    $cost = $_POST['cost'];
                     $kilometers = $_POST['kilometers'];
-                    $registration = $_POST['registration'];
-                    $capacity = $_POST['capacity'];
-                    $color = $_POST['color'];
-                    $category = $_POST['category'];
-                    $brand = $_POST['brand'];
-                    $idAgency = $_POST['idAgency'];
 
-                    $url = 'http://127.0.0.1/gestapi/vehicle/add/' . $brand . '/' . $model . '/' . $category . '/' . $color . '/' .
-                        $idAgency . '/' . $nbPlaces . '/' . $kilometers . '/' . $registration . '/' . $capacity;
+                    $url = 'http://127.0.0.1/gestapi/rent/add/' . $idVehicle . '/' . $idUser . '/' . $idStartAgency . '/' . $idEndAgency . '/' .
+                        $dateStart . '/' . $dateEnd . '/' . $cost . '/' . $kilometers;
                     $urlManualEncode = str_replace(" ","%20",$url);
                     //var_dump($url);
 
@@ -191,140 +190,81 @@
 
                         <?php //var_dump($url); ?> </h2>
 
-                    <p>Le véhicule :
-                        <?php echo  $_POST['model']; ?>
-                        a été enregistré
+                    <p>La location du  :
+                        <?php echo  $_POST['DateStart']; ?> au <?php echo  $_POST['DateEnd']; ?>
+                        a été enregistré.
                     </p>
 
-                    <p>Go <a href="http://localhost/gestasixt_2.0/?action=vehicles">retour</a> au formulaire</p>
+                    <p>Go <a href="http://localhost/gestasixt_2.0/?action=rents">retour</a> au formulaire</p>
 
                 <?php else: ?>
                     <div style="text-align: center">
 
-                        <h2>Formulaire d'enregistrement de véhicule</h2>
+                        <h2>Formulaire d'enregistrement de location</h2>
 
-                        <form action="http://localhost/gestasixt_2.0/?action=vehicles" method="POST">
+                        <form action="http://localhost/gestasixt_2.0/?action=rents" method="POST">
 
                             <div class="row">
-                                <div class="col-xl-4 col-md-6 mb-4">
+                                <div class="col-xl-6 col-md-6 mb-4">
                                     <div class="card  shadow h-100 py-2">
                                         <div class="card-body">
                                             Date de départ :
                                             <br>
-                                            <input type="date" name="DateStart">
+                                            <input type="date" class="btn btn-success btn-icon-split" name="DateStart">
                                             <br>
                                             Date d'arrivée :
                                             <br>
-                                            <input type="date" name="DateEnd">
+                                            <input type="date" class="btn btn-success btn-icon-split" name="DateEnd">
                                             <br>
 
                                             ID Agence de départ :
                                             <br>
-                                            <input type="datetime-local" name="IdStartAgency">
+                                            <input type="text" class="btn btn-success btn-icon-split" name="idStartAgency">
                                             <br>
 
                                             ID Agence d'arrivée :
                                             <br>
-                                            <input type="datetime-local" name="IdEndAgency">
+                                            <input type="text" class="btn btn-success btn-icon-split" name="idEndAgency">
                                             <br>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xl-4 col-md-6 mb-4">
+                                <div class="col-xl-6 col-md-6 mb-4">
                                     <div class="card  shadow h-100 py-2">
                                         <div class="card-body">
 
-
-
-
-                                            <br>
                                             Coût :
                                             <br>
-                                            <input type="text" name="cost">
+                                            <input type="text" class="btn btn-success btn-icon-split" name="cost">
 
                                             <br>
                                             Distance (kilomètres) :
                                             <br>
-                                            <input type="text" name="kilometers">
+                                            <input type="text" class="btn btn-success btn-icon-split" name="kilometers">
 
                                             <br>
-                                            Catégorie :
+                                            ID User :
                                             <br>
-
-                                            <select class="btn btn-primary dropdown-toggle" id="category" name="category">
-                                                <option value="">               Catégorie               </option>
-                                                <option value="1">Citadine</option>
-                                                <option value="2">Utilitaire</option>
-                                                <option value="3">Semi-remorque</option>
-                                                <option value="4">Berline</option>
-                                                <option value="5">Monospace</option>
-                                                <option value="6">Sportive</option>
-                                                <option value="7">Compacte</option>
-                                                <option value="8">Décapotable</option>
-                                            </select>
-
-
+                                            <input type="text" class="btn btn-success btn-icon-split" name="idUser">
 
                                             <br>
-                                            Couleur :
+                                            Id Véhicule :
                                             <br>
-
-                                            <select class="btn btn-primary dropdown-toggle" id="color" name="color">
-                                                <option value="">               Couleur               </option>
-                                                <option value="1">Noir</option>
-                                                <option value="2">Blanc</option>
-                                                <option value="3">Métalisé</option>
-                                                <option value="4">Gris</option>
-                                                <option value="5">Rouge</option>
-                                                <option value="6">Bleu Roi</option>
-                                                <option value="7">Bleu ciel</option>
-                                                <option value="8">Orange</option>
-                                                <option value="9">Vert</option>
-                                                <option value="10">Gris Mat</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 col-md-6 mb-4">
-                                    <div class="card  shadow h-100 py-2">
-                                        <div class="card-body">
-                                            Capacité (L) :
-                                            <br>
-                                            <input type="text" name="capacity">
-
-                                            <br>
-                                            Nombre de places:
-                                            <br>
-                                            <input type="text" name="nbPlaces">
-
-                                            <br>
-                                            Kilomètres au compteur :
-                                            <br>
-                                            <input type="text" name="kilometers">
-
-                                            <br>
-                                            Immatriculation :
-                                            <br>
-                                            <input type="text" name="registration">
-
+                                            <input type="text" class="btn btn-success btn-icon-split" name="idVehicle">
 
                                             <input type="hidden" name="form_submitted" value="1"/>
 
-
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="col-xl-4 col-md-6 mb-4">
+
+                                <div class="col-xl-12 col-md-6 mb-4">
                                     <div class="card  shadow h-100 py-2">
                                         <div class="card-body">
-                                            Id Agence :
-                                            <br>
-                                            <input type="text" name="idAgency">
-                                            <br><br>
+                                                <input type="submit" value="        Enregistrer        "
+                                                       class="btn btn-info  btn-lg">
 
-                                            <input type="submit" value="        Enregistrer        "
-                                                   class="btn btn-success btn-icon-split">
                                         </div>
                                     </div>
                                 </div>
