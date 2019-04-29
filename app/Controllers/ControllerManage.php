@@ -11,7 +11,6 @@ define('DOC_ROOT_PATH', $_SERVER['DOCUMENT_ROOT'].'/');
 use \Models;
 use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
-include DOC_ROOT_PATH . '../html/gestasixt_2.0/app/Controllers/variables.php';
 
 
 class ControllerManage
@@ -64,13 +63,7 @@ class ControllerManage
         include DOC_ROOT_PATH . '../html/gestasixt_2.0/app/Views/HF/footer.php';
     }
 
-    //fonctions de formulaires
 
-//    public function addUser($idType,$name,$firstname,$email,$password,$adrRoad,$adrCity,$adrPC,$numTel)
-//    {
-//        $user = \Models\Users::addUser($idType,$name,$firstname,$email,$password,$adrRoad,$adrCity,$adrPC,$numTel);
-//        $this->home();
-//    }
 
 
 }
