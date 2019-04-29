@@ -9,7 +9,7 @@
     <ul class="navbar-nav bg-gray-900 sidebar sidebar-dark accordion" id="accordionSidebar">
 
         <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="http://localhost/gestasixt_2.0/">
             <!--                <div class="sidebar-brand-text mx-3"><img src="./sixt.png" width="60%"></div> -->
             <div class="sidebar-brand-text mx-3"><img src="./sixt.png" width="60%"></div>
         </a>
@@ -165,7 +165,72 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-xl-9 col-md-6 mb-4">
+                        <div class="card border-left-warning shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Formulaire de suppression d'utilisateur
+                                        </div>
+                                        <?php
+                                        if (isset($_POST['form_delete_submitted'])):
+                                            $idUser = $_POST['idUser'];
+                                            $url =  'http://127.0.0.1/gestapi/user/delete/' . $idUser;
+                                            $urlManualEncode = str_replace(" ","%20",$url);
+                                            //var_dump($url);
+
+                                            $json = file_get_contents($urlManualEncode);
+                                            ?>
+
+
+                                            <h2>Vous avez supprimé l'urilisateur n° <?php echo $_POST['idUser'];?>
+                                                <br>
+
+                                                <?php //var_dump($url); ?> </h2>
+
+
+                                            <p>Go <a href="http://localhost/gestasixt_2.0/?action=users">retour</a> au formulaire</p>
+
+                                        <?php else: ?>
+                                        <div style="text-align: center">
+
+
+
+
+
+
+
+                                                            <form action="http://localhost/gestasixt_2.0/?action=users" method="POST">
+                                                                ID de l'utilisateur :
+
+                                                                <input type="text" class="btn btn-warning btn-icon-split" name="idUser">
+
+
+
+                                                                <input type="hidden" name="form_delete_submitted" value="1"/>
+
+
+                                                                <input type="submit" value="        Supprimer        "
+                                                                       class="btn btn-danger btn-sm">
+
+
+                                                </form>
+                                            </div>
+
+                                            <?php endif; ?>
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
+
+
+
                 <?php
 
 
@@ -207,7 +272,7 @@
                         <form action="http://localhost/gestasixt_2.0/?action=users" method="POST">
 
                             <div class="row">
-                                <div class="col-xl-6 col-md-6 mb-4">
+                                <div class="col-xl-4 col-md-6 mb-4">
                                     <div class="card  shadow h-100 py-2">
                                         <div class="card-body">
                                             Prénom :
@@ -231,7 +296,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xl-6 col-md-6 mb-4">
+                                <div class="col-xl-4 col-md-6 mb-4">
                                     <div class="card  shadow h-100 py-2">
                                         <div class="card-body">
                                             Rue :

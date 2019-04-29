@@ -7,7 +7,7 @@
     <ul class="navbar-nav bg-gray-900 sidebar sidebar-dark accordion" id="accordionSidebar">
 
         <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="http://localhost/gestasixt_2.0/">
             <!--                <div class="sidebar-brand-text mx-3"><img src="./sixt.png" width="60%"></div> -->
             <div class="sidebar-brand-text mx-3"><img src="./sixt.png" width="60%"></div>
         </a>
