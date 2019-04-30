@@ -183,7 +183,7 @@
                                             ?>
 
 
-                                            <h2>Vous avez supprimé l'urilisateur n° <?php echo $_POST['idUser'];?>
+                                            <h2>Vous avez supprimé l'utilisateur n° <?php echo $_POST['idUser'];?>
                                                 <br>
 
                                                 <?php //var_dump($url); ?> </h2>
@@ -272,7 +272,7 @@
                         <form action="http://localhost/gestasixt_2.0/?action=users" method="POST">
 
                             <div class="row">
-                                <div class="col-xl-4 col-md-6 mb-4">
+                                <div class="col-xl-6 col-md-6 mb-4">
                                     <div class="card  shadow h-100 py-2">
                                         <div class="card-body">
                                             Prénom :
@@ -296,7 +296,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xl-4 col-md-6 mb-4">
+                                <div class="col-xl-6 col-md-6 mb-4">
                                     <div class="card  shadow h-100 py-2">
                                         <div class="card-body">
                                             Rue :

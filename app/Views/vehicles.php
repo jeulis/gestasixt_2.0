@@ -162,6 +162,67 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-xl-9 col-md-6 mb-4">
+                        <div class="card border-left-primary shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Formulaire de suppression de vehicule
+                                        </div>
+                                        <?php
+                                        if (isset($_POST['form_delete_submitted'])):
+                                            $idVehicle = $_POST['idVehicle'];
+                                            $url =  'http://127.0.0.1/gestapi/vehicle/delete/' . $idVehicle;
+                                            $urlManualEncode = str_replace(" ","%20",$url);
+                                            //var_dump($url);
+
+                                            $json = file_get_contents($urlManualEncode);
+                                            ?>
+
+
+                                            <h2>Vous avez supprimé le véhicule n° <?php echo $_POST['idVehicle'];?>
+                                                <br>
+
+                                                <?php //var_dump($url); ?> </h2>
+
+
+                                            <p>Go <a href="http://localhost/gestasixt_2.0/?action=vehicles">retour</a> au formulaire</p>
+
+                                        <?php else: ?>
+                                            <div style="text-align: center">
+
+
+
+
+
+
+
+                                                <form action="http://localhost/gestasixt_2.0/?action=vehicles" method="POST">
+                                                    ID du véhicule :
+
+                                                    <input type="text" class="btn btn-primary btn-icon-split" name="idVehicle">
+
+
+
+                                                    <input type="hidden" name="form_delete_submitted" value="1"/>
+
+
+                                                    <input type="submit" value="        Supprimer        "
+                                                           class="btn btn-danger btn-sm">
+
+
+                                                </form>
+                                            </div>
+
+                                        <?php endif; ?>
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <br>
 
                 </div>

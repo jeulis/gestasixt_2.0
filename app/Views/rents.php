@@ -164,6 +164,67 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-xl-9 col-md-6 mb-4">
+                        <div class="card border-left-success shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Formulaire de suppression de location
+                                        </div>
+                                        <?php
+                                        if (isset($_POST['form_delete_submitted'])):
+                                            $idLocation = $_POST['idLocation'];
+                                            $url =  'http://127.0.0.1/gestapi/rent/delete/' . $idLocation;
+                                            $urlManualEncode = str_replace(" ","%20",$url);
+                                            //var_dump($url);
+
+                                            $json = file_get_contents($urlManualEncode);
+                                            ?>
+
+
+                                            <h2>Vous avez supprimé la location n° <?php echo $_POST['idLocation'];?>
+                                                <br>
+
+                                                <?php //var_dump($url); ?> </h2>
+
+
+                                            <p>Go <a href="http://localhost/gestasixt_2.0/?action=rents">retour</a> au formulaire</p>
+
+                                        <?php else: ?>
+                                            <div style="text-align: center">
+
+
+
+
+
+
+
+                                                <form action="http://localhost/gestasixt_2.0/?action=rents" method="POST">
+                                                    ID de la location :
+
+                                                    <input type="text" class="btn btn-success btn-icon-split" name="idLocation">
+
+
+
+                                                    <input type="hidden" name="form_delete_submitted" value="1"/>
+
+
+                                                    <input type="submit" value="        Supprimer        "
+                                                           class="btn btn-danger btn-sm">
+
+
+                                                </form>
+                                            </div>
+
+                                        <?php endif; ?>
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
                 <?php if (isset($_POST['form_submitted'])):
