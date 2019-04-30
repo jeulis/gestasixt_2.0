@@ -22,7 +22,7 @@ class ControllerManage
         $nbVehicles = \Models\Vehicles::getNbVehicles();
         $nbRents = \Models\Rents::getNbRents();
         $title = 'Home';
-
+        $dashboard_active=true;
         include DOC_ROOT_PATH . '../html/gestasixt_2.0/app/Views/HF/header.php';
         include DOC_ROOT_PATH . '../html/gestasixt_2.0/app/Views/home.php';
         include DOC_ROOT_PATH . '../html/gestasixt_2.0/app/Views/HF/footer.php';
@@ -31,7 +31,7 @@ class ControllerManage
     {
         $nbUsers = \Models\Users::getNbUsers();
         $title = 'Users';
-
+        $users_active=true;
         include DOC_ROOT_PATH . '../html/gestasixt_2.0/app/Views/HF/header.php';
         include DOC_ROOT_PATH . '../html/gestasixt_2.0/app/Views/users.php';
         include DOC_ROOT_PATH . '../html/gestasixt_2.0/app/Views/HF/footer.php';
@@ -40,7 +40,7 @@ class ControllerManage
     {
         $nbVehicles = \Models\Vehicles::getNbVehicles();
         $title = 'Vehicles';
-
+        $vehicles_active=true;
         include DOC_ROOT_PATH . '../html/gestasixt_2.0/app/Views/HF/header.php';
         include DOC_ROOT_PATH . '../html/gestasixt_2.0/app/Views/vehicles.php';
         include DOC_ROOT_PATH . '../html/gestasixt_2.0/app/Views/HF/footer.php';
@@ -49,7 +49,7 @@ class ControllerManage
     {
         $nbRents = \Models\Rents::getNbRents();
         $title = 'Rents';
-
+        $rents_active=true;
         include DOC_ROOT_PATH . '../html/gestasixt_2.0/app/Views/HF/header.php';
         include DOC_ROOT_PATH . '../html/gestasixt_2.0/app/Views/rents.php';
         include DOC_ROOT_PATH . '../html/gestasixt_2.0/app/Views/HF/footer.php';
