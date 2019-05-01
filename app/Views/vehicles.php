@@ -56,7 +56,7 @@
                                                 <?php //var_dump($url); ?> </h2>
 
 
-                                            <p>Go <a href="http://localhost/gestasixt_2.0/?action=vehicles">retour</a> au formulaire</p>
+                                            <p>Go <a href="../../../gestasixt_2.0/?action=vehicles">retour</a> au formulaire</p>
 
                                         <?php else: ?>
                                             <div style="text-align: center">
@@ -67,7 +67,7 @@
 
 
 
-                                                <form action="http://localhost/gestasixt_2.0/?action=vehicles" method="POST">
+                                                <form action="../../../gestasixt_2.0/?action=vehicles" method="POST">
                                                     ID du véhicule :
 
                                                     <input type="text" class="btn btn-primary btn-icon-split" name="idVehicle">
@@ -126,14 +126,14 @@
                         a été enregistré
                     </p>
 
-                    <p>Go <a href="http://localhost/gestasixt_2.0/?action=vehicles">retour</a> au formulaire</p>
+                    <p>Go <a href="../../../gestasixt_2.0/?action=vehicles">retour</a> au formulaire</p>
 
                 <?php else: ?>
                     <div style="text-align: center">
 
                         <h2>Formulaire d'enregistrement de véhicule</h2>
 
-                        <form action="http://localhost/gestasixt_2.0/?action=vehicles" method="POST">
+                        <form action="../../../gestasixt_2.0/?action=vehicles" method="POST">
 
                             <div class="row">
                                 <div class="col-xl-6 col-md-6 mb-4">

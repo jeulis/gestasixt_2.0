@@ -58,7 +58,7 @@
                                                 <?php //var_dump($url); ?> </h2>
 
 
-                                            <p>Go <a href="http://localhost/gestasixt_2.0/?action=rents">retour</a> au formulaire</p>
+                                            <p>Go <a href="../../../gestasixt_2.0/?action=rents">retour</a> au formulaire</p>
 
                                         <?php else: ?>
                                             <div style="text-align: center">
@@ -69,7 +69,7 @@
 
 
 
-                                                <form action="http://localhost/gestasixt_2.0/?action=rents" method="POST">
+                                                <form action="../../../gestasixt_2.0/?action=rents" method="POST">
                                                     ID de la location :
 
                                                     <input type="text" class="btn btn-success btn-icon-split" name="idLocation">
@@ -126,14 +126,14 @@
                         a été enregistré.
                     </p>
 
-                    <p>Go <a href="http://localhost/gestasixt_2.0/?action=rents">retour</a> au formulaire</p>
+                    <p>Go <a href="../../../gestasixt_2.0/?action=rents">retour</a> au formulaire</p>
 
                 <?php else: ?>
                     <div style="text-align: center">
 
                         <h2>Formulaire d'enregistrement de location</h2>
 
-                        <form action="http://localhost/gestasixt_2.0/?action=rents" method="POST">
+                        <form action="../../../gestasixt_2.0/?action=rents" method="POST">
 
                             <div class="row">
                                 <div class="col-xl-6 col-md-6 mb-4">
