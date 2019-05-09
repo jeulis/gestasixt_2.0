@@ -29,7 +29,7 @@
         <ul class="navbar-nav bg-gray-900 sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="http://localhost/gestasixt_2.0/">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="../../../../gestasixt_2.0/">
                 <!--                <div class="sidebar-brand-text mx-3"><img src="./sixt.png" width="60%"></div> -->
                 <div class="sidebar-brand-text mx-3"><img src="./sixt.png" width="60%"></div>
             </a>
@@ -39,7 +39,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item <?php  if ($dashboard_active) echo 'active'?>">
-                <a class="nav-link" href="http://localhost/gestasixt_2.0/?action=home">
+                <a class="nav-link" href="../../../../gestasixt_2.0/?action=home">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -54,21 +54,21 @@
 
             <!-- Nav Item - users -->
             <li class="nav-item <?php  if ($users_active) echo 'active'?>">
-                <a class="nav-link" href="http://localhost/gestasixt_2.0/?action=users">
+                <a class="nav-link" href="../../../../gestasixt_2.0/?action=users">
                     <i class="fas fa-fw fa-user"></i>
                     <span>Users</span></a>
             </li>
 
             <!-- Nav Item - vehicles -->
             <li class="nav-item <?php  if ($vehicles_active) echo 'active'?>">
-                <a class="nav-link" href="http://localhost/gestasixt_2.0/?action=vehicles">
+                <a class="nav-link" href="../../../../gestasixt_2.0/?action=vehicles">
                     <i class="fas fa-fw fa-car"></i>
                     <span>Vehicles</span></a>
             </li>
 
             <!-- Nav Item - rents -->
             <li class="nav-item <?php  if ($rents_active) echo 'active'?>">
-                <a class="nav-link" href="http://localhost/gestasixt_2.0/?action=rents">
+                <a class="nav-link" href="../../../../gestasixt_2.0/?action=rents">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Rents</span></a>
             </li>
