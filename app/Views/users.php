@@ -98,6 +98,86 @@
                         </div>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-xl-12 col-md-6 mb-4">
+                        <div class="card border-left-warning shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Formulaire de mise à
+                                            jour d'utilisateur
+                                        </div>
+                                        <?php
+                                        if (isset($_POST['form_update_submitted'])):
+                                            $idUser = $_POST['idUser'];
+                                            $email = $_POST['newEmail'];
+                                            $password = $_POST['newMdp'];
+                                            $url =  'http://127.0.0.1/gestapi/user/update/' .$idUser.'/'.$password.'/'.$email;
+                                            $urlManualEncode = str_replace(" ","%20",$url);
+                                            //var_dump($url);
+
+                                            $json = file_get_contents($urlManualEncode);
+                                            ?>
+
+
+                                            <h2>Vous avez mis a jour l'utilisateur n° <?php echo $_POST['idUser'];?>
+                                                <br>
+                                                <?php echo $_POST['newEmail'];?> <?php echo $_POST['newMdp'];?>
+                                                <br>
+
+                                                <?php //var_dump($url); ?> </h2>
+
+
+                                            <p>Go <a href="http://localhost/gestasixt_2.0/?action=users">retour</a> au formulaire</p>
+
+                                        <?php else: ?>
+                                            <div style="text-align: center">
+
+
+
+
+
+
+
+                                                <form action="http://localhost/gestasixt_2.0/?action=users" method="POST">
+                                                    ID de l'utilisateur :
+                                                    <br ><br>
+
+                                                    <input type="text" class="btn btn-warning btn-icon-split" name="idUser">
+                                                    <br ><br>
+
+                                                    Nouvel Email :
+                                                    <br ><br>
+
+                                                    <input type="text" class="btn btn-warning btn-icon-split" name="newEmail">
+                                                    <br ><br>
+                                                    Nouveau Mot de passe :
+                                                    <br ><br>
+
+                                                    <input type="text" class="btn btn-warning btn-icon-split" name="newMdp">
+                                                    <br ><br>
+
+
+
+                                                    <input type="hidden" name="form_update_submitted" value="1"/>
+
+
+                                                    <input type="submit" value="        Mettre à jour        "
+                                                           class="btn btn-info btn-sm">
+
+
+                                                </form>
+                                            </div>
+
+                                        <?php endif; ?>
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
 
 
