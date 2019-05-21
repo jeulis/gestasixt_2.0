@@ -11,7 +11,7 @@
                                             Vehicules
                                         </div>
                                         <?php
-                                        $json = file_get_contents('http://localhost/gestapi/vehicle/count');
+                                        $json = file_get_contents('http://172.21.5.246/gestapi/vehicle/count');
 
                                         $dataVehicle = json_decode($json, true);
 
@@ -42,7 +42,7 @@
                                         <?php
                                         if (isset($_POST['form_delete_submitted'])):
                                             $idVehicle = $_POST['idVehicle'];
-                                            $url =  'http://127.0.0.1/gestapi/vehicle/delete/' . $idVehicle;
+                                            $url =  'http://172.21.5.246/gestapi/vehicle/delete/' . $idVehicle;
                                             $urlManualEncode = str_replace(" ","%20",$url);
                                             //var_dump($url);
 
@@ -107,7 +107,7 @@
                     $brand = $_POST['brand'];
                     $idAgency = $_POST['idAgency'];
 
-                    $url = 'http://127.0.0.1/gestapi/vehicle/add/' . $brand . '/' . $model . '/' . $category . '/' . $color . '/' .
+                    $url = 'http://172.21.5.246/gestapi/vehicle/add/' . $brand . '/' . $model . '/' . $category . '/' . $color . '/' .
                         $idAgency . '/' . $nbPlaces . '/' . $kilometers . '/' . $registration . '/' . $capacity;
                     $urlManualEncode = str_replace(" ","%20",$url);
                     //var_dump($url);
@@ -277,7 +277,7 @@
 
 
                     <?php
-                    $json = file_get_contents('http://localhost/gestapi/vehicle/count');
+                    $json = file_get_contents('http://172.21.5.246/gestapi/vehicle/count');
 
                     $dataVehicle = json_decode($json, true);
 
@@ -289,7 +289,7 @@
                     for ($i = 0; $i < $nbVehicles; $i++) {
 
 
-                        $json = file_get_contents('http://localhost/gestapi/vehicle/get/all');
+                        $json = file_get_contents('http://172.21.5.246/gestapi/vehicle/get/all');
                         $dataVehicleAll = json_decode($json, true);
                         $resultatVehicleAll = $dataVehicleAll['vehicle'][$i];
 

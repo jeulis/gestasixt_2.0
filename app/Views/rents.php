@@ -13,7 +13,7 @@
                                             Locations
                                         </div>
                                         <?php
-                                        $json = file_get_contents('http://localhost/gestapi/rent/count');
+                                        $json = file_get_contents('http://172.21.5.246/gestapi/rent/count');
 
                                         $dataRents = json_decode($json, true);
 
@@ -44,7 +44,7 @@
                                         <?php
                                         if (isset($_POST['form_delete_submitted'])):
                                             $idLocation = $_POST['idLocation'];
-                                            $url =  'http://127.0.0.1/gestapi/rent/delete/' . $idLocation;
+                                            $url =  'http://172.21.5.246/gestapi/rent/delete/' . $idLocation;
                                             $urlManualEncode = str_replace(" ","%20",$url);
                                             //var_dump($url);
 
@@ -107,7 +107,7 @@
                     $cost = $_POST['cost'];
                     $kilometers = $_POST['kilometers'];
 
-                    $url = 'http://127.0.0.1/gestapi/rent/add/' . $idVehicle . '/' . $idUser . '/' . $idStartAgency . '/' . $idEndAgency . '/' .
+                    $url = 'http://172.21.5.246/gestapi/rent/add/' . $idVehicle . '/' . $idUser . '/' . $idStartAgency . '/' . $idEndAgency . '/' .
                         $dateStart . '/' . $dateEnd . '/' . $cost . '/' . $kilometers;
                     $urlManualEncode = str_replace(" ","%20",$url);
                     //var_dump($url);
@@ -227,7 +227,7 @@
 
 
                     <?php
-                    $json = file_get_contents('http://localhost/gestapi/rent/count');
+                    $json = file_get_contents('http://172.21.5.246/gestapi/rent/count');
 
                     $dataRent = json_decode($json, true);
 
@@ -240,7 +240,7 @@
 
 
 
-                        $json = file_get_contents('http://localhost/gestapi/rent/get/all');
+                        $json = file_get_contents('http://172.21.5.246/gestapi/rent/get/all');
                         $dataRentAll = json_decode($json, true);
                         $resultatRentAll = $dataRentAll['rent'][$i];
 

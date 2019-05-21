@@ -8,7 +8,7 @@ class Users
 {
     public function getNbUsers()
     {
-        $json = file_get_contents('http://localhost/gestapi/user/count');
+        $json = file_get_contents('http://172.21.5.246/gestapi/user/count');
 
         $dataUser = json_decode($json, true);
 

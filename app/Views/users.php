@@ -12,7 +12,7 @@
                                 d'utilisateurs
                             </div>
                             <?php
-                            $json = file_get_contents('http://localhost/gestapi/user/count');
+                            $json = file_get_contents('http://172.21.5.246/gestapi/user/count');
 
                             $dataUser = json_decode($json, true);
 
@@ -44,7 +44,7 @@
                             <?php
                             if (isset($_POST['form_delete_submitted'])):
                                 $idUser = $_POST['idUser'];
-                                $url = 'http://127.0.0.1/gestapi/user/delete/' . $idUser;
+                                $url = 'http://172.21.5.246/gestapi/user/delete/' . $idUser;
                                 $urlManualEncode = str_replace(" ", "%20", $url);
                                 //var_dump($url);
 
@@ -106,7 +106,7 @@
                                 $idUser = $_POST['idUser'];
                                 $email = $_POST['newEmail'];
                                 $password = $_POST['newMdp'];
-                                $url = 'http://127.0.0.1/gestapi/user/update/' . $idUser . '/' . $password . '/' . $email;
+                                $url = 'http://172.21.5.246/gestapi/user/update/' . $idUser . '/' . $password . '/' . $email;
                                 $urlManualEncode = str_replace(" ", "%20", $url);
                                 //var_dump($url);
 
@@ -116,21 +116,20 @@
 
                                 <h2>Vous avez mis a jour l'utilisateur n° <?php echo $_POST['idUser']; ?>
                                     <br>
-                                    <?php echo $_POST['newEmail']; ?> <?php echo $_POST['newMdp']; ?>
-                                    <br>
+                                    
 
                                     <?php //var_dump($url);
                                     ?> </h2>
 
 
-                                <p>Go <a href="http://localhost/gestasixt_2.0/?action=users">retour</a> au formulaire
+                                <p>Go <a href="../../../gestasixt_2.0/?action=users">retour</a> au formulaire
                                 </p>
 
                             <?php else: ?>
                                 <div style="text-align: center">
 
 
-                                    <form action="http://localhost/gestasixt_2.0/?action=users" method="POST">
+                                    <form action="../../../gestasixt_2.0/?action=users" method="POST">
                                         ID de l'utilisateur :
                                         <br>
 
@@ -145,7 +144,7 @@
                                         Nouveau Mot de passe :
                                         <br>
 
-                                        <input type="text" class="btn btn-warning btn-icon-split" name="newMdp">
+                                        <input type="password" class="btn btn-warning btn-icon-split" name="newMdp">
                                         <br><br>
 
 
@@ -183,7 +182,7 @@
             $adrCity = $_POST['city'];
             $adrPC = $_POST['PC'];
             $numTel = $_POST['telephone'];
-            $url = 'http://127.0.0.1/gestapi/user/add/' . $idType . '/' . $name . '/' . $firstname . '/' . $email . '/' .
+            $url = 'http://172.21.5.246/gestapi/user/add/' . $idType . '/' . $name . '/' . $firstname . '/' . $email . '/' .
                 $password . '/' . $adrRoad . '/' . $adrCity . '/' . $adrPC . '/' . $numTel;
             $urlManualEncode = str_replace(" ", "%20", $url);
             //var_dump($url);
@@ -317,7 +316,7 @@
 
 
             <?php
-            $json = file_get_contents('http://localhost/gestapi/user/count');
+            $json = file_get_contents('http://172.21.5.246/gestapi/user/count');
 
             $dataUser = json_decode($json, true);
 
@@ -329,7 +328,7 @@
             for ($i = 0; $i < $nbUsers; $i++) {
 
 
-                $json = file_get_contents('http://localhost/gestapi/user/get/all');
+                $json = file_get_contents('http://172.21.5.246/gestapi/user/get/all');
                 $dataUserAll = json_decode($json, true);
                 $resultatUserAll = $dataUserAll['user'][$i];
 

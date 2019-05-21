@@ -8,7 +8,7 @@ class Rents
 {
     public function getNbRents()
     {
-        $json = file_get_contents('http://localhost/gestapi/rent/count');
+        $json = file_get_contents('http://172.21.5.246/gestapi/rent/count');
 
         $dataRents = json_decode($json, true);
 

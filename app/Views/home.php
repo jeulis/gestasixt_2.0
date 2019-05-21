@@ -88,7 +88,7 @@
                     for ($i = 0; $i < $nbUsers; $i++) {
 
 
-                        $json = file_get_contents('http://localhost/gestapi/user/get/all');
+                        $json = file_get_contents('http://172.21.5.246/gestapi/user/get/all');
                         $dataUserAll = json_decode($json, true);
                         $resultatUserAll = $dataUserAll['user'][$i];
 
